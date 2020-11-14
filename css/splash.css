@@ -19,8 +19,8 @@ body{
     position: relative;
     height: 100%;
     width: 1000%;
-    animation: pulse 10s infinite;
-    animation-timing-function: step-start;
+    /* animation: pulse 10s infinite;
+    animation-timing-function: step-start; */
 }
 #back>.inner::after{
     display: table;
@@ -38,8 +38,8 @@ body{
 #back>.inner>.canvas>img{
     display: block;
     position: absolute;
-    max-width: 80vw;
-    max-height: 80vh;
+    max-width: 90vw;
+    max-height: calc(100vh - 192px);
     margin: auto;
     left: 0;
     right: 0;
@@ -83,12 +83,11 @@ body{
 .logo{
     display: block;
     position: fixed;
-    top: 0;
+    top: 32px;
     left: 0;
     right: 0;
-    bottom: 0;
     margin: auto;
-    height: 40px;
+    height: 32px;
     width: 100%;
     text-align: center;
     pointer-events: none;
@@ -103,7 +102,7 @@ body{
     max-width: 600px;
     text-align: center;
     position: fixed;
-    bottom: 16px;
+    bottom: 0px;
     left: 0;
     right: 0;
     margin: auto;
@@ -111,5 +110,6 @@ body{
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
-    line-height: 120%;
+    height: 96px;
+    line-height: 96px;
 }
