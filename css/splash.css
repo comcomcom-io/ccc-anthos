@@ -19,8 +19,8 @@ body{
     position: relative;
     height: 100%;
     width: 1000%;
-    /* animation: pulse 10s infinite;
-    animation-timing-function: step-start; */
+    animation: pulse 10s infinite;
+    animation-timing-function: step-start;
 }
 #back>.inner::after{
     display: table;
