@@ -1,0 +1,193 @@
+#login{
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+    position: relative;
+}
+#login form{
+    margin-top: 40px;
+}
+#login .logo{
+    height: 20px;
+    display: block;
+    margin: auto;
+    padding-top: 40px;
+}
+#login input{
+    width: 100%;
+    padding: 18px 10px 10px 10px;
+    text-align: center;
+    border: 1px solid #fafafa;
+    background-color: #fafafa;
+    border-radius: 2px;
+}
+#login button{
+    display: block;
+    height: 38px;
+    line-height: 44px;
+    border: 1px solid #333;
+    background-color: #333;
+    margin: auto;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: normal;
+    transition: opacity .25s ease;
+}
+#login button:hover{
+    opacity: 0.75;
+    transition: opacity .25s ease;
+}
+#login label{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 45px;
+    font-weight: normal;
+    background-color: #fafafa;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+#login .halfers label.half{
+    display: inline-block;
+    width: 48.5%;
+    height: 38px;
+    line-height: 45px;
+    font-weight: normal;
+    background-color: #fafafa;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #fafafa;
+    transition: all .25s ease;
+}
+#login .halfers label.half.selected{
+    color: #333;
+    border: 1px solid #333;
+    transition:all .25s ease;
+}
+#login .halfers label.half:last-child{
+    float: right;
+}
+#login .halfers input{
+    display: none;
+}
+#login textarea{
+    display: block;
+    width: 100%;
+    border: 1px solid #fafafa;
+    background-color: #fafafa;
+    min-height: 120px;
+    text-align: center;
+    padding: 20px;
+    padding-top: 14px;
+}
+.plusbutton{
+    display: block;
+    width: 26px;
+    height: 26px;
+    background-color: #333;
+    border-radius: 13px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+.plusbutton img{
+    display: block;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+span.sectit{
+    display: block;
+    width: 100%;
+    text-align: center;
+    opacity: 0.5;
+    padding: 10px 0px 30px;
+}
+#login .left{
+    display: block;
+    width: 49%;
+    float: left;
+    margin-right: 2%;
+}
+#login .right{
+    display: block;
+    width: 49%;
+    float: left;
+}
+.clearon:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+
+.projects .pblock{
+    display: block; 
+    width: 100%;
+    height: 40px;
+    line-height: 46px;
+    background-color: #fafafa;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    font-size: 12px;
+    border-radius: 4px;
+    text-align: center;
+}
+.onoffswitch {
+    position: relative; width: 84px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+}
+.onoffswitch-checkbox {
+    display: none !important;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #FFFFFF; border-radius: 0px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 12px; color: white; 
+    font-weight: normal;
+    box-sizing: border-box;
+    line-height: 36px;
+}
+.onoffswitch-inner:before {
+    content: "Español";
+    padding-left: 10px;
+    background-color: #2AD499; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "English";
+    padding-right: 10px;
+    background-color: #3878F0; color: #FFFFFF;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 1px; margin: 14.5px;
+    background: #FFFFFF;
+    position: absolute; top: 0; bottom: 0;
+    right: 50px;
+    border: 2px solid #FFFFFF; border-radius: 0px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+}

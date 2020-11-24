@@ -1,0 +1,52 @@
+<div ng-if="realog === 'yes'">
+<div id="login" class="projects">
+    
+    <!-- Logo & Menu -->
+    <a href="/dashboard"><img class="logo" src="img/commies.svg"/></a>
+    <div class="meniu">
+        <div class="leftleft"><a href="/projectssettings"></a></div>
+        <div class="centiecentie">Menu Settings</div>
+            <div class="rightright"></div>
+    </div>
+        
+    <!-- App -->
+    <form>
+        <!-- Esp -->
+        <div ng-repeat="item in newMenuEsp" ng-show="lang != 'eng'">
+            <input ng-model="item.Data" ng-blur="newMenuEsp.$save(item)" type="text" placeholder="Categoria" spellcheck="false" >
+            <div style="text-align:right">
+                <span ng-click="DelEsp(item)" class="ngremove">Remove</span>
+            </div>
+        </div>
+        <div style="text-align:center;" ng-show="lang != 'eng'">
+            <div class="plusbutton" ng-click="newEsp()">
+                <img src="img/url.svg"/>
+            </div>
+        </div>
+        
+        <!-- Eng -->
+        <div ng-repeat="item in newMenuEng" ng-show="lang == 'eng'">
+            <input ng-model="item.Data" ng-blur="newMenuEng.$save(item)" type="text" placeholder="Categoria" spellcheck="false" >
+            <div style="text-align:right">
+                <span ng-click="DelEng(item)" class="ngremove">Remove</span>
+            </div>
+        </div>
+        <div style="text-align:center;" ng-show="lang == 'eng'">
+            <div class="plusbutton" ng-click="newEng()">
+                <img src="img/url.svg"/>
+            </div>
+        </div>
+        
+
+    </form>
+</div>
+<!-- Switch & Uploader -->
+<div class="onoffswitch">
+    <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+    </div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div>

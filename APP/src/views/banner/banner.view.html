@@ -1,0 +1,181 @@
+
+<style>
+            #blockie{
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                max-height: 100vh;
+                position: fixed;
+                z-index: 10000;
+                overflow: hidden;
+                left: 0;
+                top: 0;
+            }
+            #blockie.hidie{
+                animation:fadeh 0s;
+                animation-timing-function:linear;
+                animation-delay: 2s;
+                animation-fill-mode:forwards;
+                animation-iteration-count: 1;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation:fadeh 0s;
+                -webkit-animation-timing-function:linear;
+                -webkit-animation-delay: 2s;
+                -webkit-animation-fill-mode: forwards;
+            }
+            #blockie .modernloader{
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: #fafafa;
+                overflow: hidden;
+                opacity: 1;
+                transition: background-color 1s ease;
+            }
+            #blockie .modernloader.true {
+                opacity: 1;
+                animation:fadeout 1s;
+                animation-timing-function:linear;
+                animation-delay: 1s;
+                animation-fill-mode:forwards;
+                animation-iteration-count: 1;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation:fadeout 1s;
+                -webkit-animation-timing-function:linear;
+                -webkit-animation-delay: 1s;
+                -webkit-animation-fill-mode: forwards;
+            }
+            .modernloader.values{
+                background-color: #fafafa;
+                content: {{Dsettings.loadedie}};
+            }
+    
+    .thisisdead{
+        opacity: 0;
+        transition: opacity ease .30s;
+    }
+    .thisisdead.hidie{
+        opacity: 1;
+        transition: opacity ease .30s;
+        transition-delay: .25s;
+    }
+    
+    
+     * {
+      box-sizing: border-box;
+    }
+
+    
+    
+</style>
+<div id="blockie" class="{{Dsettings.loadedie}}">
+    <div class="modernloader {{Dsettings.loaded}}" style="background-color:#fafafa"></div>
+</div>
+
+
+<style>
+/* Dots */
+.slick-dotted.slick-slider
+{
+    margin-bottom: 30px;
+}
+
+.slick-dots
+{
+    position: absolute;
+    bottom: 10px;
+
+    display: block;
+
+    width: 100%;
+    padding: 0;
+    margin: 0;
+
+    list-style: none;
+
+    text-align: center;
+}
+.slick-dots li
+{
+    position: relative;
+
+    display: inline-block;
+
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    padding: 0;
+
+    cursor: pointer;
+}
+.slick-dots li button
+{
+    font-size: 0;
+    line-height: 0;
+
+    display: block;
+
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+
+    cursor: pointer;
+
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+}
+.slick-dots li button:hover,
+.slick-dots li button:focus
+{
+    outline: none;
+}
+.slick-dots li button:hover:before,
+.slick-dots li button:focus:before
+{
+    opacity: 1;
+}
+.slick-dots li button:before
+{
+    font-family: 'slick';
+    font-size: 10px;
+    line-height: 20px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 20px;
+    height: 20px;
+
+    content: '•';
+    text-align: center;
+
+    opacity: .5;
+    color: white;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.slick-dots li.slick-active button:before
+{
+    opacity: 1;
+    color: white;
+}
+</style>
+<style>
+    .slick-dotted.slick-slider{
+        margin-bottom: 0px;
+        
+    }
+</style>
+<section class="regular slider thisisdead {{Dsettings.loadedie}}" >
+    <a ng-repeat="item in banner" ng-href="{{item[0].Url}}" style="background-image: url({{item[0].Src}})">
+        <div>
+            <span ng-if="realan == 'eng'"  class="happytriggerhavoc">{{item[0].CopyE}}</span>
+            <span ng-if="realan != 'eng'"  class="happytriggerhavoc">{{item[0].Copy}}</span>
+        </div>
+    </a>
+</section>

@@ -1,0 +1,44 @@
+<!--
+<div class="grid">
+        <a ng-repeat="item in projects | orderBy: 'Order'" ng-if="item.Featured == 'Yes' && item.Visible == 'On'" href="//project/{{item.$id}}" class="thumbnail {{item.Settings.Ratio}}" ng-init="mason()" custom-on-change="mason" style="background-image: url({{item.Thumbnail}});">
+            <div class="thover">
+                <div class="ttop">
+                    <span ng-if="realan != 'eng'">{{item.Name}}</span>
+                    <span ng-if="realan == 'eng'">{{item.NameE}}</span>
+                </div>
+                <div class="tbot">
+                    <span ng-if="realan != 'eng'">{{item.Tags}}</span>
+                    <span ng-if="realan == 'eng'">{{item.TagsE}}</span>
+                </div>
+            </div>
+        </a>
+        <a class="thumbnail l viewmore" href="/work">
+            <div ng-if="realan == 'eng'" class="text">More Work</div>
+            <div ng-if="realan != 'eng'" class="text">Más Proyectos</div>
+        </a>
+</div>
+-->
+
+
+
+
+<div class="grid">
+        <a ng-repeat="item in projects | orderBy: 'Order'" ng-if="item.Featured == 'Yes' && item.Visible == 'On' && theproject.Name != item.Name || item.Featured == 'Yes' && item.Visible == 'On' && theproject.NameE != item.NameE" href="/project/{{item.$id}}" class="thumbnail {{item.Settings.Ratio}}" ng-init="mason()" custom-on-change="mason" style="background-image: url({{item.Thumbnail}});">
+            <div class="thover">
+                <div class="ttop">
+                    <span class="commm" ng-if="realan != 'eng'">
+                        <div class="namiel">{{item.Name}}</div>
+                        <div class="tagiel">{{item.Tags}}</div>
+                    </span>
+                    <span class="commm" ng-if="realan == 'eng'">
+                        <div class="namiel">{{item.NameE}}</div>
+                        <div class="tagiel">{{item.TagsE}}</div>
+                    </span>
+                </div>
+            </div>
+        </a>
+        <a class="thumbnail l viewmore" href="/work">
+            <div ng-if="realan == 'eng'" class="text">More Work</div>
+            <div ng-if="realan != 'eng'" class="text">Más Proyectos</div>
+        </a>
+</div>

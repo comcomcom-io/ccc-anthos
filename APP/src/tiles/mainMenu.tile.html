@@ -1,0 +1,11 @@
+<script type="text/ng-template" id="recursiveMenu.tile.html">
+<a class="dropdown-toggle" data-toggle="dropdown" ng-href="{{item.path}}" role="button" aria-expanded="false" ng-class="{dropdown : item.submenu}">{{item.menu.content}} <span class="caret" ng-show="item.submenu"></span></a>
+<ul ng-if="item.submenu" class="dropdown-menu">
+    <li ng-repeat="item in item.submenu" ng-include="'recursiveMenu.tile.html'" ng-class="{active : ($route.current.loadedTemplateUrl == item.options.templateUrl) || activar}">
+    </li>
+</ul>
+</script>
+<ul class="nav navbar-nav">
+	<li ng-repeat="item in content" ng-include="'recursiveMenu.tile.html'" ng-class="{active : ($route.current.loadedTemplateUrl == item.options.templateUrl) || activar}">
+	</li>
+</ul>

@@ -1,0 +1,232 @@
+<!-- <div ng-if="realog === 'yes'">
+    <link rel="stylesheet" href="css/portfolio.css">
+<style>
+    body{
+        padding: 0px 10px;
+        margin-bottom: 0px;
+    }
+</style>
+<div id="login">
+    <a href="/dashboard"><img class="logo" src="https://firebasestorage.googleapis.com/v0/b/ccc-inthepark.appspot.com/o/cccms.svg?alt=media&token=08cf6e5b-636d-4b02-8c41-32fdc5906d80"/></a>
+    
+    <div class="meniu">
+        <div class="leftleft"><a href="/cccmanagement"><</a></div>
+        <div class="centiecentie">Crear management</div>
+        <div class="rightright">&nbsp;</div>
+    </div>
+    
+    <form>
+        <img id="thumbie" src="" style="width:100%; display:none"/>
+        <input type="file" id="thumb" placeholder="hola" style="display:none"  custom-on-change="uThumbnail">
+        <label for="thumb">Thumbnail</label>
+
+        <img id="headie" src="" style="width:100%; display:none"/>
+        <input type="file" id="header" placeholder="hola" style="display:none"  custom-on-change="uHeader">
+        <label for="header">Cover</label>
+
+        <input type="text" placeholder="Titulo" spellcheck="false" ng-model="pro.Name" ng-show="lang != 'eng'"/>
+        <br><br>
+        <input type="text" placeholder="Subtitulo" spellcheck="false" ng-model="pro.Subtitle" ng-show="lang != 'eng'"/>
+        <br><br>
+        <button ng-click="newQuill()">Quill</button>
+        <button ng-click="tagsTAGS()">Tags</button>
+        <div id="editor" ng-on-load="newQuill()">
+            <p>Hello World!</p>
+            <p>Some initial <strong>bold</strong> text</p>
+            <p><br></p>
+        </div>
+        
+        <div ng-repeat="item in pro.Addon track by $index">
+            <hr>
+            <span class="sectit">
+                
+                <span ng-if="item.Type == 'imgvid'">Image or Video</span>
+                <span ng-if="item.Type == 'm-04 paragraph'">Paragraph</span>
+                <span ng-if="item.Type == 'm-01 quote'">Quote</span>
+                
+            </span>
+            <textarea ng-show="lang != 'eng'" ng-model="item.Src" ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Escribe aquí"></textarea>
+            <textarea ng-show="lang == 'eng'" ng-model="item.SrcE" ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Type here"></textarea>
+            <textarea ng-model="item.Src" ng-if="item.Type == 'embed'" placeholder="Paste iframe here"></textarea>
+            <img id="hollie{{$index}}" style="width:100%; display:none" ng-if="item.Type == 'imgvid'"/>
+            <input type="file" id="iv{{$index}}" placeholder="hola" style="display:none" ng-if="item.Type == 'imgvid'" custom-on-change="upAddonImgVid" name="{{$index}}"/>
+            <label for="iv{{$index}}" ng-if="item.Type == 'imgvid'">Select Picture or Video</label>
+            
+            <div class="halfers" ng-if="item.Type == 'imgvid'">
+                <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-01" id="mtfull" name="horvsver" checked="checked">
+                <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-04" id="mtcenter" name="horvsver">
+                <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-02" id="mthalf" name="horvsver">
+                <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-03" id="mtthird" name="horvsver">
+                <label ng-if="item.Type == 'imgvid'" for="mtfull" class="half" ng-class="{selected: item.MediaType == 'm-01'}">Full Width</label>
+                <label ng-if="item.Type == 'imgvid'" for="mtcenter" class="half" ng-class="{selected: item.MediaType == 'm-04'}">Center</label>
+                <label ng-if="item.Type == 'imgvid'" for="mthalf" class="half" ng-class="{selected: item.MediaType == 'm-02'}">Half</label>
+                <label ng-if="item.Type == 'imgvid'" for="mtthird" class="half" ng-class="{selected: item.MediaType == 'm-03'}">Third</label>
+            </div>
+
+            <div style="text-align:right">
+                <span ng-click="deleteAddon($index, item)" class="ngremove">Remove</span>
+            </div>
+        </div>
+        <hr>
+        <div style="text-align:center;">
+            <div class="plusbutton" ng-click="newAddonImgVid()">
+                <img src="img/img.svg"/>
+            </div>
+            <div class="plusbutton" ng-click="newAddonText()">
+                <img src="img/text.svg"/>
+            </div>
+            <div class="plusbutton" ng-click="newAddonQuote()">
+                <img src="img/quote.svg"/>
+            </div>
+        </div>
+        <hr>
+        <input type="text" placeholder="URL" spellcheck="false" ng-model="pro.Url" ng-trim="false" ng-change="pro.Url = pro.Url.split(' ').join('')"/>
+        <br><br>
+        <textarea placeholder="Descripcion SEO" ng-model="pro.SeoDesc"></textarea>
+        <br>
+        <div class="halfers">
+            <input type="radio" ng-model="pro.MediaType" value="m-01" id="promtfull" name="horvsver" checked="checked">
+            <input type="radio" ng-model="pro.MediaType" value="m-04" id="promtcenter" name="horvsver">
+            <input type="radio" ng-model="pro.MediaType" value="m-02" id="promthalf" name="horvsver">
+            <input type="radio" ng-model="pro.MediaType" value="m-04" id="promtthird" name="horvsver">
+            <label for="promtfull" class="half" ng-class="{selected: pro.MediaType == 'm-01'}">Full Width</label>
+            <label for="promtcenter" class="half" ng-class="{selected: pro.MediaType == 'm-04'}">Center</label>
+            <label for="promthalf" class="half" ng-class="{selected: pro.MediaType == 'm-02'}">Half</label>
+            <label for="promtthird" class="half" ng-class="{selected: pro.MediaType == 'm-04'}">Third</label>
+        </div>
+        <hr>
+        <button id="btnLogin" type="submit" ng-disabled = "waitSave != 0" ng-click="newP()">{{buttonMgs}}</button>
+        <div ng-if="errorMsg"> {{errorMsg}} </div>
+    </form>
+</div>
+    <progress id="uploader" class="off"></progress>
+<div class="footie">
+    <span>&copy; comcomcom 2020</span>
+</div> -->
+<!-- Switch -->
+<!-- <div class="onoffswitch">
+    <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+
+    </div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div> -->
+
+<div ng-if="realog === 'yes'">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <style>
+        body {
+            padding: 0px 10px;
+            margin-bottom: 0px;
+        }
+    </style>
+    <div id="login">
+        <a href="/dashboard " class="title">Create Article</a>
+        <div class="meniu">
+            <div class="leftleft">
+                <a href="/cccmanagement">
+                    <span class="material-icons">keyboard_backspace</span> Back
+                </a>
+            </div>
+            <div class="centiecentie">In The Park Admin</div>
+            <div class="rightright">&nbsp;</div>
+        </div>
+
+        <form>
+            <img id="thumbie" src="media/PlaceholderImage.jpg" style="width:100%; display:none">
+            <input type="file" id="thumb" placeholder="Thumbnail" style="display:none" custom-on-change="uThumbnail">
+            <label for="thumb">Thumbnail</label>
+            <img id="headie" src style="width:100%; display:none">
+            <input type="file" id="header" placeholder="Header" style="display:none" custom-on-change="uHeader">
+            <label for="header">Cover</label>
+            <input type="text" placeholder="Titulo" spellcheck="false" ng-model="pro.Name" ng-show="lang != 'eng'">
+            <br><br>
+            <input type="text" placeholder="Subtitulo" spellcheck="false" ng-model="pro.Subtitle" ng-show="lang != 'eng'">
+            <br><br>
+
+            <div ng-repeat="item in pro.Addon track by $index">
+                <hr>
+                <span class="sectit">
+                    <span ng-if="item.Type == 'imgvid'">Image or Video</span>
+                    <span ng-if="item.Type == 'm-04 paragraph'">Paragraph</span>
+                    <span ng-if="item.Type == 'm-01 quote'">Quote</span>
+                </span>
+
+                <textarea ng-show="lang != 'eng'" ng-model="item.Src" ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Escribe aquí"></textarea>
+                <textarea ng-show="lang == 'eng'" ng-model="item.SrcE" ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Type here"></textarea>
+                <textarea ng-model="item.Src" ng-if="item.Type == 'embed'" placeholder="Paste iframe here"></textarea>
+                <img id="hollie{{$index}}" style="width:100%; display:none" ng-if="item.Type == 'imgvid'">
+
+                <input type="file" id="iv{{$index}}" placeholder="Image Loader" style="display:none" ng-if="item.Type == 'imgvid'" custom-on-change="upAddonImgVid" name="{{$index}}">
+                <label for="iv{{$index}}" ng-if="item.Type == 'imgvid'">Select Picture or Video</label>
+
+                <div class="halfers" ng-if="item.Type == 'imgvid'">
+                    <p>Select the size of the thumbnail inside the category.</p>
+                    <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-01" id="mtfull" name="horvsver" checked>
+                    <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-04" id="mtcenter" name="horvsver">
+                    <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-02" id="mthalf" name="horvsver">
+                    <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-03" id="mtthird" name="horvsver">
+                    <label ng-if="item.Type == 'imgvid'" for="mtfull" class="half" ng-class="{selected: item.MediaType == 'm-01'}">Full Width</label>
+                    <label ng-if="item.Type == 'imgvid'" for="mtcenter" class="half" ng-class="{selected: item.MediaType == 'm-04'}">Center</label>
+                    <label ng-if="item.Type == 'imgvid'" for="mthalf" class="half" ng-class="{selected: item.MediaType == 'm-02'}">Half</label>
+                    <label ng-if="item.Type == 'imgvid'" for="mtthird" class="half" ng-class="{selected: item.MediaType == 'm-03'}">Third</label>
+                </div>
+                <div style="text-align:right">
+                    <span ng-click="deleteAddon($index, item)" class="ngremove">Remove</span>
+                </div>
+            </div>
+            <hr>
+            <div style="text-align:center;">
+                <label class="labl">Add new content blocks</label>
+                <div class="plusbutton" ng-click="newAddonImgVid()">
+                    <span class="material-icons">photo</span>
+                </div>
+                <div class="plusbutton" ng-click="newAddonText()">
+                    <span class="material-icons">notes</span>
+                </div>
+                <div class="plusbutton" ng-click="newAddonQuote()">
+                    <span class="material-icons">format_quote</span>
+                </div>
+            </div>
+            <hr>
+
+            <div class="input">
+                <label>Page URL</label>
+                <input type="text" placeholder="This will appear in your URL bar." spellcheck="false" ng-model="pro.Url" ng-trim="false" ng-change="pro.Url = pro.Url.split(\' \').join(\'\')">
+            </div>
+
+            <div class="input">
+                <label>Description SEO</label>
+                <textarea placeholder="Type here the page's description for search engines." ng-model="pro.SeoDesc"></textarea>
+            </div>
+            <hr>
+
+            <div class="halfers">
+                <p>Select the size of the thumbnail inside the category.</p>
+                <input type="radio" ng-model="pro.MediaType" value="m-01" id="promtfull" name="horvsver" checked>
+                <input type="radio" ng-model="pro.MediaType" value="m-04" id="promtcenter" name="horvsver">
+                <input type="radio" ng-model="pro.MediaType" value="m-02" id="promthalf" name="horvsver">
+                <input type="radio" ng-model="pro.MediaType" value="m-04" id="promtthird" name="horvsver">
+                <label for="promtfull" class="half" ng-class="{selected: pro.MediaType == 'm-01'}">Full Width</label>
+                <label for="promtcenter" class="half" ng-class="{selected: pro.MediaType == 'm-04'}">Center</label>
+                <label for="promthalf" class="half" ng-class="{selected: pro.MediaType == 'm-02'}">Half</label>
+                <label for="promtthird" class="half" ng-class="{selected: pro.MediaType == 'm-03'}">Third</label>
+            </div>
+            <hr>
+            <button id="btnLogin" type="submit" ng-disabled="waitSave != 0" ng-click="newP()">{{buttonMgs}}</button>
+            <div ng-if="errorMsg" class="error">{{errorMsg}}</div>
+        </form>
+    </div>
+    <progress id="uploader" class="off"></progress>
+    <div class="onoffswitch">
+        <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+</div>
+<div ng-if="realog != 'yes'" ng-init="tologin()"></div>

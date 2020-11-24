@@ -1,0 +1,39 @@
+@font-face {
+    font-family: Theinhardt;
+    src: url(../types/Theinhardt-Regular.otf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Theinhardt;
+    src: url(../types/Theinhardt-RegularItalic.otf);
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: Theinhardt;
+    src: url(../types/Theinhardt-Light.otf);
+    font-weight: lighter;
+}
+@font-face {
+    font-family: Theinhardt;
+    src: url(../types/Theinhardt-LightItalic.otf);
+    font-weight: lighter;
+    font-style: italic;
+}
+@font-face {
+    font-family: Theinhardt;
+    src: url(../types/Theinhardt-Bold.otf);
+    font-weight: bold;
+}
+
+
+/*
+Colors
+– 
+
+
+Thumbnails
+– Landscape : 8:5;
+– Portrait : 5:8;
+
+*/

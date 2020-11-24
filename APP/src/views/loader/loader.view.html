@@ -1,0 +1,72 @@
+<div ng-if="realog === 'yes'">
+<style>
+    body{
+        padding: 0px 10px;
+        margin-bottom: 0px;
+    }
+</style>
+<div id="login">
+    <a href="/dashboard" class="title">Loader</a>
+    <div class="meniu">
+        <div class="leftleft">
+            <a href="/dashboard">
+                <span class="material-icons">keyboard_backspace</span> Back
+            </a>
+        </div>
+        <div class="centiecentie"><a href="/dashboard" class="title">IN THE PARK ADMIN</a></div>
+        <div class="rightright"></div>
+    </div>
+    
+    <form>
+        <div ng-repeat="item in addies | orderBy: 'Order'">
+            <span class="sectit">
+                <span ng-if="item.Type == 'imgvid'">Image</span>
+            </span>
+            <textarea ng-show="lang != 'eng'" ng-model="item.Src" ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Escribe aquí" ng-blur="addies.$save(item)"></textarea>
+            <textarea ng-model="item.Src" ng-if="item.Type == 'embed'" placeholder="Paste iframe here" ng-blur="addies.$save(item)"></textarea>
+            
+            
+            <img ng-if="item.Type == 'imgvid' && item.Src" id="IMG{{item.$id}}" src="{{item.Src}}" style="width:100%;"/>
+            <input type="file" id="{{item.$id}}" style="display:none" custom-on-change="ChangeIMG" />
+            <label for="{{item.$id}}" ng-if="item.Type == 'imgvid'">Select Picture</label>
+
+            
+            
+            
+            <div style="display:block;height:40px">
+                <div class="blockieup">
+                    <div id="{{item.$id}}" class="top" ng-click="upNum($event, item)">
+                        <img id="{{item.$id}}" src="img/up.svg"/>
+                    </div>
+                    <div id="{{item.$id}}" class="down" ng-click="downNum($event, item)">
+                        <img id="{{item.$id}}" src="img/down.svg"/>
+                    </div>
+                    
+                </div>
+                <span style="float:right; margin-top:15px;" id="{{item.$id}}" ng-click="deleteAddonie($event, item)" class="ngremove">Remove</span>
+            </div>
+        </div>
+        <hr>
+        <div style="text-align:center;">
+            <div class="plusbutton" ng-click="newAddonImg()">
+                <span class="material-icons">photo</span>
+            </div>
+        </div>
+        <hr>
+        <button id="btnLogin" type="submit" ng-click="loader.$save()">Guardar</button>
+    </form>
+</div>
+<!-- Switch -->
+<!-- <a href="/loader/{{loader.$id}}" target="_blank" class="gotoloader">
+    View loader
+</a> -->
+<div class="onoffswitch">
+    <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+<progress id="uploader" class="off"></progress>
+    </div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div>

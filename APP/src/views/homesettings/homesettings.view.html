@@ -1,0 +1,74 @@
+<div ng-if="realog === 'yes'">
+<div id="login" class="projects">
+    <a href="/dashboard"><img class="logo" src="img/commies.svg"/></a>
+    <div class="meniu">
+        <div class="leftleft"><a href="/dashboard"><</a></div>
+        <div class="centiecentie">Home Settings</div>
+            <div class="rightright"></div>
+    </div>        
+        
+    <form>
+        
+        
+        
+        
+        
+        
+        <!--Real-->
+        <div ng-repeat="item in banner">
+            
+            
+            
+            <img id="IMG{{$id}}" src="{{item[0].Src}}" style="width:100%;"/>
+            
+            <input type="file" id="{{item.$id}}" placeholder="hola" style="display:none" custom-on-change="upBannerEX" name="EX{{$index}}"/>
+            <label for="{{item.$id}}">Select Picture or Video</label>
+            
+            
+            
+            <textarea ng-blur="banner.$save(item)" ng-show="lang != 'eng'" ng-model="item[0].Copy" placeholder="Escribe aquí"></textarea>
+            <textarea ng-blur="banner.$save(item)" ng-show="lang == 'eng'" ng-model="item[0].CopyE"  placeholder="Type here"></textarea>
+            <input type="text" ng-blur="banner.$save(item)"  ng-model="item[0].Url">
+            <div style="text-align:right">
+                <span ng-click="deleteBanner(item)" class="ngremove">Remove</span>
+            </div>
+            <br><br>
+        </div>
+        
+        <!--FAKE-->
+        <div ng-repeat="item in homie.Banner track by $index">
+            <img id="bannie{{$index}}" src="{{item.Src}}" style="width:100%;display:none"/>
+            <input type="file" id="bi{{$index}}" placeholder="hola" style="display:none" custom-on-change="upBanner" name="{{$index}}"/>
+            <label for="bi{{$index}}">Select Picture or Video</label>
+            <textarea ng-show="lang != 'eng'" ng-model="item.Copy" placeholder="Escribe aquí"></textarea>
+            <textarea ng-show="lang == 'eng'" ng-model="item.CopyE" placeholder="Type here"></textarea>
+            <input type="text"  ng-model="item.Url" placeholder="Url">
+            <div style="text-align:right">
+                <span ng-click="deleteBanner($index)" class="ngremove">Remove</span>
+            </div>
+            <br><br>
+        </div>
+        <hr>
+        <div style="text-align:center;">
+            <div class="plusbutton" ng-click="newBanner()">
+                <img src="img/img.svg"/>
+            </div>
+        </div>  
+    </form>
+    <form>
+        <button ng-click="tobannie()">Save</button>
+    </form>
+</div>
+    
+    
+    
+<div class="onoffswitch">
+    <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+<progress id="uploader" class="off"></progress>
+</div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div>

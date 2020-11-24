@@ -1,0 +1,10 @@
+<div id="login">
+    <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/ccc-inthepark.appspot.com/o/cccms.svg?alt=media&token=08cf6e5b-636d-4b02-8c41-32fdc5906d80"/>
+    <form>
+        <h1>IN THE PARK ADMIN</h1>
+        <input id="txtPassword" type="password" placeholder="Enter password" ng-model="user.pass"/>
+        <div style="text-align:center">{{error}}</div>
+        <button id="btnLogin" ng-click="access()">Log in</button>
+    </form>
+    <div ng-if="realog === 'yes'" ng-init="todash()">Logging in</div>
+</div>

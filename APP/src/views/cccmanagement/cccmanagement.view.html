@@ -1,0 +1,68 @@
+<div ng-if="realog === 'yes'">
+    <link rel="stylesheet" href="css/portfolio.css">
+<style>
+    body{
+        padding: 0px 10px;
+        margin-bottom: 0px;
+    }
+</style>
+<div id="login" class="projects">
+    <a href="/dashboard" class="title">Management</a>
+    <div class="meniu">
+        <div class="leftleft">
+            <a href="/dashboard">
+                <span class="material-icons">keyboard_backspace</span> Back
+            </a>
+        </div>
+        <div class="centiecentie">IN THE PARK ADMIN</div>
+        <div class="rightright">
+            <a href="/newmanagement">
+                Add Element <span class="material-icons">add_circle</span>
+            </a>
+        </div>
+    </div>
+    <form>
+        <div id="repeater" ng-repeat="item in management | orderBy: 'Order'" class="pblock" >
+            <div class="arrows">
+                <div id="{{item.$id}}" class="top" ng-click="upNum($event, item)">
+                    <span id={{item.$id}} class="material-icons">expand_less</span>
+                </div>
+                <div id="{{item.$id}}" class="down" ng-click="downNum($event, item)">
+                    <span id="{{item.$id}}" class="material-icons">expand_more</span>
+                </div>
+            </div>
+            <a href="/editmanagement/{{item.$id}}">{{item.Name}}</a>
+            <div class="actions">
+                <div class="delete">
+                    <div style="cursor:pointer">
+                        <span ng-if="item.Delete != 'Yes'" ng-click="item.Delete = 'Yes'" class="material-icons dno">clear</span>
+                        <span ng-if="item.Delete == 'Yes'">
+                            <span id="{{item.$id}}" ng-click="productDelete($event, item)" class="mimune">&nbsp;Y&nbsp;</span>/<span
+                                class="mimune" ng-click="item.Delete = 'No'">&nbsp;N&nbsp;</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="viewyes">
+                    <div ng-click="toggleVisible(item)" style="cursor:pointer">
+                        <span ng-if="item.Visible == 'On'" class="material-icons">visibility</span>
+                        <span ng-if="item.Visible == 'Off'" class="material-icons">visibility_off</span>
+                    </div>
+                </div>
+                <div class="featured">
+                    <div ng-click="toggleFeatured(item)" style="cursor:pointer">
+                        <span ng-if="item.Featured == 'Yes'" class="material-icons">star_border</span>
+                        <span ng-if="item.Featured == 'No'" class="material-icons">star</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="/newmanagement" class="bottom-add">
+            <span class="material-icons">add_circle</span>
+        </a>
+    </form>
+        </div>
+        <a href="/" target="_blank" class="previewpage">
+            Preview Page <span class="material-icons">call_made</span>
+        </a>
+    </div>
+<div ng-if="realog != 'yes'" ng-init="tologin()"></div>

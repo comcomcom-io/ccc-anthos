@@ -1,0 +1,57 @@
+<!-- <style>
+    footer{
+        opacity: 0;
+        transition: all .75s ease;
+        transition-delay: 1.25s;
+    }
+    footer.hidie{
+        opacity: 1;
+        transition: all .5s ease;
+        transition-delay: 1.25s;
+    }
+</style>
+<footer class="{{Dsettings.loadedie}}">
+    <ul>
+        <li ng-if="realan == 'eng'" class="title">Contact</li>
+        <li ng-if="realan != 'eng'" class="title">Contacto</li>
+        <li><a href="mailto:{{ studioSettings.Newbusiness.Mail }}" target="_top">{{ studioSettings.Newbusiness.Mail }}</a></li>
+        <li><a href="tel:{{ studioSettings.Newbusiness.Phone.split(' ').join('') }}">{{ studioSettings.Newbusiness.Phone }}</a></li>
+    </ul>
+    <ul class="smallhidden">
+        <li ng-if="realan == 'eng'" class="title">Connect</li>
+        <li ng-if="realan != 'eng'" class="title">Conectar</li>
+        <li><a href="{{ sosocial[0].Url }}">{{ sosocial[0].Name }}</a></li>
+        <li><a href="{{ sosocial[1].Url }}">{{ sosocial[1].Name }}</a></li>
+    </ul>
+    <ul class="language">
+        <li ng-if="realan == 'eng'" class="title">Language</li>
+        <li ng-if="realan != 'eng'" class="title">Idioma</li>
+        <li ng-if="realan == 'eng'" ng-click="changeLangEng()">English</li>
+        <li ng-if="realan != 'eng'" ng-click="changeLangEng()">Inglés</li>
+        <li ng-if="realan == 'eng'" ng-click="changeLangEsp()">Spanish</li>
+        <li ng-if="realan != 'eng'" ng-click="changeLangEsp()">Español</li>
+    </ul>
+</footer> -->
+<footer>
+    <div class="column">
+        <p>In the Park Management® 2020.<br>
+        Todos los Derechos Reservados</p>
+    </div>
+    <div class="column">
+        <p>Río Mosela 200<br>
+        Col. Del Valle<br>
+        Ciudad de México, 21240</p>
+    </div>
+    <div class="column" style="padding-top:0px; position:relative">
+        <ul class="footmenu">
+        <li><a href="/nosotros">Sobre Nosotros</a></li>
+        <li><a href="mailto:hola@inthepark.com">Contacto</a></li>
+        <li><a href="">Política de Privacidad</a></li>
+        <li><a href="">Términos y Condiciones</a></li>
+        </ul>
+        <ul class="social-icns">
+            <li><a href="/gracias"><img src="img/igig.svg"/></a></li>
+            <li><a href="/gracias"><img src="img/igig.svg"/></a></li>
+        </ul>
+    </div>
+</footer>

@@ -1,0 +1,267 @@
+Variables de cotizaciones
+    El transporte seco carga seca
+
+    3/4 de tonelada
+    1/2
+    3 1/2
+    5 Toneladas
+
+    Torton
+
+    Hacer layout a los 6 tipos de segmentos
+
+    
+    Personas Morales, Personas Fisicas
+
+    Ofertas de Licitacion
+
+    El transportista pudiera darme en donde se encuentra
+
+    Nosotros Avisamos que tenemos carga
+
+    Cuanto espero del viaje
+    Destino y ruta muy claro
+    Una tarifa baja Media y Alta
+
+    Mercado de compra a traves del hombre camion
+
+    Destinos mas comunes
+
+    Tarifa Corta y Grandes
+
+    Antiguedad del tipo del camion
+
+
+
+
+    Variables
+        ruta
+        antiguedad unidad (si al cliente no le importa la antiguedad puedes ahorrar un 25%)
+        local 90 a 120k (ida y regreso)
+        Modalidad A/B 
+
+        Tipo de carga (que hay que mover)
+        Destino
+        Como me pagas?
+        Cual es el peso a cargar
+        Palet o granel?
+
+        Cuanto tiempo de carga y descarga
+        (Incluye o no incluye maniobras de carga?)
+
+        Tonelada por metro cubico ()
+
+
+
+
+        Puntos rojos (robos)
+        Puntos verdes (verdes)
+
+        Reporte NTP (Diario)
+
+
+
+        Costo km promedio es de 14 pesos por camionetita
+
+
+
+        Tablas de tarifa nacional en local
+
+            Camiones de 3/4           12 pesos
+            Unidad 1 1/2 de base en   13 pesos
+            Unidad 3 5                14 pesos
+            Rabon                     15 pesos
+            Torton                    16 pesos
+            Tracto hasta los          24 pesos
+            Full hasta                32 pesos
+
+
+        No incluye viaticos
+
+
+
+        Variables adicionales
+            Condiciones de seguridad = Poleo (trasabilidad)'
+            Debemos tener una torre de control
+
+            Maniobra de empaque especial
+            (Emplayado)
+
+            Entrega ABC
+
+            Maniobras aprox de 4 horas y 4 personas (1250 aprox)
+
+            Servicios de custodia en camion
+
+            Auxiliar Ayudante / Copiloto
+
+            Servicio de escoltas
+
+            Entregas especiales (ej de palet a cajas)
+
+            Cross dock virtual (guardar mercancia un rato)
+
+            Seguro .4 o .7 
+
+
+
+
+
+
+        Contratar al transportista
+            Inspeccion del transportista
+            Identificaciones personales
+            Recursos
+            Investigaciones previas
+            Area legal
+
+            Checklist
+                Proveedor
+
+                Unidades
+
+
+
+
+
+
+        Findings
+            Eliminar el 15 o 20% de comision
+
+
+Salida a venta de un 11% a 14% o hasta un 25% mas caro 
+
+    La urgencia / tiempo
+    Recurrencia 
+
+    Refrigerados es 25%
+
+    Congelacion hasta 45%
+
+
+Reglas del tarifario, y los minimos y maximos
+
+
+
+
+
+
+
+Referencias tarifarias para el resto de la republica...
+Es importante generar una relacion increible con el tarifario
+
+Canacar Toslink te va a preguntar que rendimiento y tipo de unidad es necesaria
+En caso de meter un tracto con 2 o 3 ejes el de 3 ejes cuesta aprox 9% mas
+
+
+Mikel mauleon logistica y costos 
+Web flet solutions tomtom
+
+
+
+
+    Checklist de Proveedor
+        Acta constitutiva Moral o Fisicas
+        Tu Homoclave dle fisco
+        Referencia de no mas de dos meses
+        Caratula de banco para transferencias
+        Carta Porte, registro en linea como transportista
+
+        Me permites tus catalogos de operadores
+        Carta de circulacion
+        Domicilio fiscal
+        Domicilio donde vive
+
+        Corroborar que el dude vive en x lugar
+        Referencias
+
+        Toda esta infromacion en pdf, colocate
+        y sube a la plataforma la informacion cvs.
+
+        Mandame los papeles para integrarlos a la plataforma
+        Tarjeta de circulacion y modelo tamaño
+
+        Fotografias frente back left and right
+        No hacer excepcion con investigacion a los Camiones
+
+
+
+    Checklist previo a ruta
+        Fotografia de odometro
+        licencia del operador
+        Poliza de seguro actualizada
+        Fotografias de las llantas y cajas con timestamps
+
+
+    Checklist de carga
+        El transportista recibe cajas o palets
+        Control de la mercancia
+        Que me esta entregando
+        Fotografia del tipo de mercancia
+        Fotografia de como quedo la carga o el contenedor
+        El sello lo pone vaven
+
+        Documentacion que ampara la carga
+        Que es lo que debe acompañar la carga
+        orden de carga
+        factura
+        pedido
+        documento de almacen
+
+        Que requisitos de folio y firma necesita el operador son necesarios para pagar?
+        es bien importanrte
+
+        Cada cliente tiene una forma de corta
+
+
+
+    Checklist de carga
+        Copia de la factura y del pedido
+        Cuando son paqueteras ninguna te obliga a abrir el paqueteras
+        El generador de 
+
+    Checklist generador de carga
+        RFC 
+        Acta constitutiva 
+        Empresas a transporte 
+        Productos estan en catalogo 
+        Pedirle su solvencia y como es el pago 
+
+        Compañias de AAA
+        Servicios SPOT = Servicios de oportunidad
+
+
+        Como te enteraste de la plataforma?
+
+
+
+
+
+Logistica inversa
+
+
+Las estadias debertian de no ser mas de 4 horas de carga y descarga
+Tolerancia de 4 horas de 
+
+Si me tienes parado el camion mas de 2 dias
+
+Por dia parado voy a cobrar el equivalente de un flete total
+
+como cobras un viaje completo?
+costo por horaa 
+
+Estadia dame 
+
+Las noches de cobran y horas de descanso 
+
+
+
+
+se abren las ventanas de embarque
+
+GPS Geocercas etc...
+
+
+Dispuesto en nuestra organizacion las llamadas del porque somos solucion y ahorramos dinero y tiempo
+
+Como encaminamos a office depot

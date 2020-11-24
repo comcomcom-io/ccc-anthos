@@ -1,0 +1,33 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+<div id="wrapper">
+    <div id="modules">
+
+      
+
+      <div class="module m-04 paragraph">
+        <div class="media nosotros-logo">
+          <img src="img/Logo.svg">
+        </div>
+        <div class="data">
+          <p>{{studioSettings.About}}</p>
+        </div>
+      </div>
+
+      <div class="module m-03 nosotros nosotros-fixer">
+        <div class="data">
+          <div class="title">Selected Clients</div>
+          <div class="subtitle">{{studioSettings.Clients}}</div>
+        </div>
+      </div>
+      <div class="module m-03 nosotros">
+        <div class="data">
+          <div class="title">Press</div>
+          <div class="subtitle">
+            <div ng-repeat="item in studioSettingsSocial"><a href="{{item.Url}}" target="_blank">{{item.Name}}</a></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

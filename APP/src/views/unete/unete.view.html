@@ -1,0 +1,110 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+
+<div id="wrapper">
+    <div id="modules" class="unete">
+        <form>
+            <div class="module left">
+                <div class="title">Unete</div>
+                <div class="subtitle">If you are interested in becoming a model for in the park, please fill out the form below and send it to us.<br><br>
+                Please note that we do not accept walk-ins at the agency, all applications must be made online.
+                </div>
+                <div class="formtitle">
+                Datos Generales
+                </div>
+                <div class="form">
+                <div class="row two">
+                    <input type="text" placeholder="Nombre" spellcheck="false" ng-model="pro.Name">
+                    <input type="text" placeholder="Apellido" spellcheck="false" ng-model="pro.LastName">
+                </div>
+                <div class="row three">
+                    <input type="text" placeholder="País" spellcheck="false" ng-model="pro.Country">
+                    <input type="text" placeholder="Estado" spellcheck="false" ng-model="pro.State">
+                    <input type="text" placeholder="Ciudad" spellcheck="false" ng-model="pro.City">
+                </div>
+                <div class="row three">
+                    <input type="text" placeholder="Email" spellcheck="false" ng-model="pro.Email">
+                    <input type="text" placeholder="Telefono" spellcheck="false" ng-model="pro.Phone">
+                    <input type="text" placeholder="Age" spellcheck="false" ng-model="pro.Age">
+                </div>
+                <div class="row two">
+                    <input type="text" placeholder="Nombre Tutor Legal" spellcheck="false" ng-model="pro.TutorName">
+                    <input type="text" placeholder="Apellido Tutor Legal" spellcheck="false" ng-model="pro.TutorLastName">
+                </div>
+                <div class="row two">
+                    <input type="text" placeholder="Correo Tutor Legal" spellcheck="false" ng-model="pro.TutorEmail">
+                    <input type="text" placeholder="Telefono Tutor Legal" spellcheck="false" ng-model="pro.TutorPhone">
+                </div>
+                <div class="row one">
+                    <input type="text" placeholder="Pasatiempos" spellcheck="false" ng-model="pro.Hobbies">
+                </div>
+                <div class="row text">
+                    <span>¿Estás actualmente con contrato con alguna agencia o has tenido contratos en el pasado?</span>
+                    <div>
+                    <input type="radio" id="male" name="gender" value="male" spellcheck="false" ng-model="pro.Contracts">
+                    <label for="male">Yes</label>
+                    <input type="radio" id="female" name="gender" value="female" spellcheck="false" ng-model="pro.Contracts">
+                    <label for="female">No</label>
+                    </div>
+                </div>
+                </div>
+                <div class="formtitle noline">
+                Medidas
+                </div>
+                <div class="form">
+                <div class="row three">
+                    <input type="text" placeholder="Altura" spellcheck="false" ng-model="pro.Height">
+                    <input type="text" placeholder="Cintura" spellcheck="false" ng-model="pro.Waist">
+                    <input type="text" placeholder="Cadera" spellcheck="false" ng-model="pro.Hip">
+                </div>
+                </div>
+            </div>
+            <div class="module right">
+                <div class="subtitle">
+                <span>
+                    Fotos
+                </span>
+                    Please send clear pictures of yourself, which have been taken in natural light. We prefer untouched pictures, in which you look natural. Please look straight into the camera, and take pictures of your side, your profile and please also send a full body shot. They can be taken with a phone, and do not have to be professional.
+                </div>
+                <div class="pics">
+                <div>
+                    <div class="bgplace pic-frente"><img src="img/Rectangle1.png"></div>
+                    <span>Frente</span>
+                </div>
+                <input type="file" id="thumb" placeholder="hola" style="display:none"  custom-on-change="uThumbnail">
+                    <label for="thumb">
+                        <div>
+                            <div class="bgplace pic-place" id="frente"><img src="img/Rectangle1.png"></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="pics">
+                <div>
+                    <div class="bgplace pic-completo"><img src="img/Rectangle1.png"></div>
+                    <span>Cuerpo Completo</span>
+                </div>
+                <input type="file" id="thumbTwo" placeholder="hola" style="display:none"  custom-on-change="uThumbnailTwo">
+                    <label for="thumbTwo">
+                        <div>
+                            <div class="bgplace pic-place" id="cuerpo"><img src="img/Rectangle1.png"></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="pics">
+                <div>
+                    <div class="bgplace pic-perfil"><img src="img/Rectangle1.png"></div>
+                    <span>Perfil</span>
+                </div>
+                <input type="file" id="thumbThree" placeholder="hola" style="display:none"  custom-on-change="uHeader">
+                    <label for="thumbThree">
+                        <div>
+                            <div class="bgplace pic-place" id="perfil"><img src="img/Rectangle1.png"></div>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-submit" ng-click="newP()">Enviar Solicitud</div>
+            </div>
+        <form>
+    </div>
+</div>
+
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

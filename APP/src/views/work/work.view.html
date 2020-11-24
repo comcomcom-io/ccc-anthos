@@ -1,0 +1,45 @@
+<style>
+    #headerid.stepzeropointfive{
+        position: fixed;
+        margin-top: -260px;
+    }
+    #headerid.stepone{
+        position: fixed;
+        margin-top: -260px;
+        transition: margin-top .70s ease;
+    }
+</style>
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+   
+
+    
+
+
+
+    
+    
+</div>
+
+<!--filter:filtEsp -->
+
+<div class="grid cincuentados">
+        <a ng-repeat="item in projects | filter:filtEsp | orderBy: 'Order'" ng-if="item.Visible == 'On'" href="/project/{{item.$id}}" class="thumbnail {{item.Settings.Ratio}}" ng-init="mason()" custom-on-change="mason" style="background-image: url({{item.Thumbnail}});">
+            <div class="thover">
+                <div class="ttop">
+                    <span class="commm" ng-if="realan != 'eng'">
+                        <div class="namiel">{{item.Name}}</div>
+                        <div class="tagiel">{{item.Tags}}</div>
+                    </span>
+                    <span class="commm" ng-if="realan == 'eng'">
+                        <div class="namiel">{{item.NameE}}</div>
+                        <div class="tagiel">{{item.TagsE}}</div>
+                    </span>
+                </div>
+            </div>
+        </a>
+</div>
+    
+ <!-- Tags -->
+
+
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

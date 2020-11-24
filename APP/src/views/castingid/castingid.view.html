@@ -1,0 +1,44 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+<title>{{metatags.title}}</title>
+  <meta name="description" content="{{metatags.description}}" >
+<div id="nswitch" class="{{nswitch.$value}}">
+    <img class="{{nswitch.$value}}" src="img/commies.svg"/>
+</div>
+<div id="blockie" class="{{Dsettings.loadedie}}">
+    <div class="modernloader {{Dsettings.loaded}}" style="background-color:#fafafa"></div>
+</div>
+
+<div id="wrapper">
+  <div id="modules">
+
+    <div class="top">
+      <div class="module m-02">
+        <div class="media">
+          <img src="{{theproject.Header}}">
+        </div>
+      </div>
+      <div class="module m-02">
+        <div class="data top">
+          <div class="date">{{theproject.dateday}} {{theproject.datemonth}} {{theproject.dateyear}}<span>Casting</span></div>
+          <div class="title">{{theproject.Name}}</div>
+          <div class="subtitle">{{theproject.Subtitle}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div ng-repeat="item in Addoniess | orderBy: 'Order'" class="module {{item.MediaType}} {{item.Type}}">
+      <div ng-if="item.Type == 'm-04 paragraph'" class="data" ng-bind-html="item.Src"></div>
+      <div ng-if="item.Type == 'm-01 quote'" class="data">
+        <div class="title">{{item.Src}}</div>
+      </div>
+      <div ng-if="item.Type == 'imgvid'" class="media">
+        <img src="{{item.Src}}">
+      </div>
+    </div>
+
+ 
+
+  </div>
+</div>
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>
+

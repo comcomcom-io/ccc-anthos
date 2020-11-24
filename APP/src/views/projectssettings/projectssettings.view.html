@@ -1,0 +1,67 @@
+<div ng-if="realog === 'yes'">
+<style>
+    body{
+        padding: 0px 10px;
+        margin-bottom: 0px;
+    }
+</style>
+<div id="login" class="projects">
+    <a href="/dashboard"><img class="logo" src="img/commies.svg"/></a>
+    <div class="meniu">
+        <div class="leftleft"><a href="/dashboard"><</a></div>
+        <div class="centiecentie">Projects</div>
+            <div class="rightright"><a href="/newproject">+</a></div>
+    </div>
+    <form>
+        <div id="repeater" ng-repeat="item in projects | orderBy: 'Order'" class="pblock" >
+            <div class="arrows">
+                <div id="{{item.$id}}" class="top" ng-click="upNum($event, item)">
+                    <img id="{{item.$id}}" src="img/up.svg"/>
+                </div>
+                <div id="{{item.$id}}" class="down" ng-click="downNum($event, item)">
+                    <img id="{{item.$id}}" src="img/down.svg"/>
+                </div>
+            </div>
+            <a href="/editproject/{{item.$id}}">{{item.Name}}</a>
+            <div class="viewyes">
+                <div ng-click="toggleVisible(item)" style="cursor:pointer">
+                    <img src="img/vyes.svg" ng-class="{vyes: item.Visible == 'On', vno: item.Visible === 'Off'}"/>
+                </div>
+            </div>
+            <div class="featured">
+                <div ng-click="toggleFeatured(item)" style="cursor:pointer">
+                    <img ng-if="item.Featured == 'Yes'" src="img/fyes.svg" class="fyes"/>
+                    <img ng-if="item.Featured == 'No'" src="img/fno.svg" class="fno"/>
+                </div>
+            </div>
+            <div class="featured">
+                <div ng-click="toggleFeatured(item)" style="cursor:pointer">
+                    <img ng-if="item.Featured == 'Yes'" src="img/fyes.svg" class="fyes"/>
+                    <img ng-if="item.Featured == 'No'" src="img/fno.svg" class="fno"/>
+                </div>
+            </div>
+            <div class="delete">
+                <div style="cursor:pointer">
+                    <img ng-if="item.Delete != 'Yes'" ng-click="item.Delete = 'Yes'" src="img/dno.svg" class="dno"/>
+                    <span ng-if="item.Delete == 'Yes'">
+                        <span id="{{item.$id}}" ng-click="productDelete($event, item)" class="mimune">&nbsp;Y&nbsp;</span>/<span class="mimune" ng-click="item.Delete = 'No'">&nbsp;N&nbsp;</span>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+        <hr>
+        <form>
+        <a href="/menusettings">
+            <div class="pblock" >
+                Menu Settings
+            </div>
+        </a>
+        </form>
+        
+</div>
+<div class="footie">
+    <span>&copy; Communal Studio 2017</span>
+</div>
+    </div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div>

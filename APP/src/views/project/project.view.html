@@ -1,0 +1,89 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+<title>{{metatags.title}}</title>
+  <meta name="description" content="{{metatags.description}}" >
+<div id="nswitch" class="{{nswitch.$value}}">
+    <img class="{{nswitch.$value}}" src="img/commies.svg"/>
+</div>
+<div id="blockie" class="{{Dsettings.loadedie}}">
+    <div class="modernloader {{Dsettings.loaded}}" style="background-color:#fafafa"></div>
+</div>
+<div id="project">
+    <div class="cover">
+        <img src="{{theproject.Header}}"/>
+    </div>
+<!--        <a ng-attr-title="Hi">sdfa</a>-->
+    <div class="main">
+        <span class="title" ng-if="realan != 'eng'">{{theproject.Title}}</span>
+        <span class="title" ng-if="realan == 'eng'">{{theproject.TitleE}}</span>
+        <p ng-if="realan != 'eng'" style="white-space: pre-wrap;">{{theproject.Description}}</p>
+        <p ng-if="realan == 'eng'" style="white-space: pre-wrap;">{{theproject.DescriptionE}}</p>
+    </div>
+    <div ng-repeat="item in Addoniess | orderBy: 'Order'" class="{{item.Type}} {{item.Orientation}}" style="white-space: pre-wrap;">
+        <img ng-if="item.Type === 'imgvid'" ng-src="{{item.Src}}" ng-hide= "item.Type === 'imgvid' && item.Tipo == 'video/mp4' || item.Type === 'imgvid' && item.Tipo == 'video/webm'">
+        <video ng-if="item.Type === 'imgvid' && item.Tipo == 'video/mp4' || item.Type === 'imgvid' && item.Tipo == 'video/webm'" ng-src="{{item.Src | trustUrl}}" autoplay loop muted></video>
+        <p ng-if="item.Type != 'imgvid' && item.Type != 'embed' && realan != 'eng'">{{item.Src}}</p>
+        <p ng-if="item.Type != 'imgvid' && item.Type != 'embed' && realan == 'eng'">{{item.SrcE}}</p>
+        <div ng-if="item.Type === 'embed'" class="aspect-ratio" ng-bind-html="item.Src | to_trusted">
+        </div>
+    </div>
+    
+    
+    <div class="credits clearon">
+        <div class="left">
+            <ul>
+                <li ng-if="realan != 'eng'" class="title">Áreas Desarrolladas</li>
+                <li ng-if="realan == 'eng'" class="title">Developed Areas</li>
+                <p ng-if="realan != 'eng'" style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{theproject.Areas}}</p>
+                <p ng-if="realan == 'eng'" style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{theproject.AreadE}}</p>
+            </ul>
+        </div>
+        <div class="right">
+            <ul>
+                <li ng-if="realan != 'eng'" class="title">Información de Proyecto</li>
+                <li ng-if="realan == 'eng'" class="title">Project Information</li>
+                <p ng-if="realan != 'eng'" style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{theproject.Credits}}</p>
+                <p ng-if="realan == 'eng'" style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{theproject.CreditsE}}</p>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<div id="gfixer">
+    <div ng-if="realan != 'eng'" class="features">
+        Proyectos Destacados
+    </div>
+    <div ng-if="realan == 'eng'" class="features">
+        Featured Projects
+    </div>
+    
+ <ng-include ng-controller="featuredController" src="'featured/featured.view.html'"></ng-include>
+    
+    
+    
+    
+</div>
+
+<footer style="background-color:#fafafa">
+    <ul>
+        <li ng-if="realan == 'eng'" class="title">Contact</li>
+        <li ng-if="realan != 'eng'" class="title">Contacto</li>
+        <li><a href="mailto:{{ studioSettings.Newbusiness.Mail }}" target="_top">{{ studioSettings.Newbusiness.Mail }}</a></li>
+        <li><a href="tel:{{ studioSettings.Newbusiness.Phone.split(' ').join('') }}">{{ studioSettings.Newbusiness.Phone }}</a></li>
+    </ul>
+    <ul class="nosmall">
+        <li ng-if="realan == 'eng'" class="title">Connect</li>
+        <li ng-if="realan != 'eng'" class="title">Conectar</li>
+        <li ng-repeat="item in Connect"><a href="{{
+item.Url }}">{{
+            item.Name }}</a></li>
+    </ul>
+    <ul class="language">
+        <li ng-if="realan == 'eng'" class="title">Language</li>
+        <li ng-if="realan != 'eng'" class="title">Idioma</li>
+        <li ng-if="realan == 'eng'" ng-click="changeLangEng()">English</li>
+        <li ng-if="realan != 'eng'" ng-click="changeLangEng()">Inglés</li>
+        <li ng-if="realan == 'eng'" ng-click="changeLangEsp()">Spanish</li>
+        <li ng-if="realan != 'eng'" ng-click="changeLangEsp()">Español</li>
+    </ul>
+</footer>

@@ -1,0 +1,57 @@
+<div ng-if="realog === 'yes'">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <style>
+        body{
+            padding: 0px 10px;        
+            margin-bottom: 0px;
+        }
+    </style>
+    <div id="login" class="projects">
+      <span class="title">Dashboard</span>
+      <div class="meniu">
+        <div class="leftleft"></div>
+        <div class="centiecentie"><a href="/dashboard" class="title">In The Park Admin</a></div>
+        <div class="rightright"></div>
+      </div>
+      <form class="d-links">
+        <a href="/cccmanagement">
+            <div class="pblock">Management</div>
+        </a>
+        <a href="/ccccasting">
+            <div class="pblock">Casting</div>
+        </a>
+        <a href="/cccproduccion">
+            <div class="pblock">Producción</div>
+        </a>
+        <a href="/ccctalento">
+            <div class="pblock">Talento</div>
+        </a>
+        <a href="/cccnosotros">
+            <div class="pblock">Nosotros</div>
+        </a>
+        <a href="/intro/configuration">
+            <div class="pblock">Loader</div>
+        </a>
+        <center>
+          <div class="viewyesss">
+            <div ng-click="toggleSwitch()" style="cursor:pointer">
+              <div ng-if="nswitch.$value == 'siporfavor'" ng-class="vyes" class="visib">
+                <span class="material-icons">visibility</span> <p>Show website</p>
+              </div>
+              <div ng-if="nswitch.$value == 'nogracias'" ng-class="vyes" class="visib">
+                <span class="material-icons">visibility_off</span> <p>Hide website</p>
+              </div>
+            </div>
+          </div>
+        </center>
+        <br>
+        <div style="text-align:center; font-size:12px">
+          <span style="cursor:pointer;" ng-click="logouteame()">Logout</span>
+        </div>
+      </form>
+    </div>
+    <a href="/home" target="_blank" class="previewpage">
+      Preview Website <span class="material-icons">call_made</span>
+    </a>
+  </div>
+  <div ng-if="realog != 'yes'" ng-init="tologin()"></div>`

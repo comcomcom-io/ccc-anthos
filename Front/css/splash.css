@@ -1,0 +1,115 @@
+@font-face {
+    font-family: Neuzeit;
+    src: url(../type/ngr.ttf);
+  }
+body{
+    background-color: #fff;
+}
+#back{
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+}
+#back>.inner{
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 1000%;
+    animation: pulse 20s infinite;
+    animation-timing-function: step-start;
+}
+#back>.inner::after{
+    display: table;
+    content: '';
+    clear: both;
+}
+#back>.inner>.canvas{
+    position: relative;
+    height: 100%;
+    width: 10%;
+    display: block;
+    float: left;
+    overflow: hidden;
+}
+#back>.inner>.canvas>img{
+    display: block;
+    position: absolute;
+    max-width: 90vw;
+    max-height: calc(100vh - 192px);
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+@keyframes pulse {
+    0% {
+        margin-left: -0%;
+    }
+    10% {
+        margin-left: -100%;
+    }
+    20% {
+        margin-left: -200%;
+    }
+    30% {
+        margin-left: -300%;
+    }
+    40% {
+        margin-left: -400%;
+    }
+    50% {
+        margin-left: -500%;
+    }
+    60% {
+        margin-left: -600%;
+    }
+    70% {
+        margin-left: -700%;
+    }
+    80% {
+        margin-left: -800%;
+    }
+    90% {
+        margin-left: -900%;
+    }
+}
+
+.logo{
+    display: block;
+    position: fixed;
+    top: 32px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    height: 32px;
+    width: 100%;
+    text-align: center;
+    pointer-events: none;
+}
+.logo img{
+    height: 100%;
+}
+
+.comsoon{
+    display: block;
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: fixed;
+    bottom: 0px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    font-family: Neuzeit;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    height: 96px;
+    line-height: 96px;
+}

@@ -1,0 +1,262 @@
+<!-- <div ng-if="realog === 'yes'">
+<style>
+    body{
+        padding: 0px 10px;
+        margin-bottom: 0px;
+    }
+</style>
+<div id="login">
+    <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/ccc-inthepark.appspot.com/o/cccms.svg?alt=media&token=08cf6e5b-636d-4b02-8c41-32fdc5906d80"/>
+    
+    <div class="meniu">
+        <div class="leftleft"><a href="/cccproduccion"><</a></div>
+        <div class="centiecentie">{{produccion.Name}}</div>
+        <div class="rightright">&nbsp;</div>
+    </div>
+    
+    <form>
+        <img id="thumbie" src="{{produccion.Thumbnail}}" style="width:100%;"/>
+        <input type="file" id="thumb" placeholder="hola" style="display:none"  custom-on-change="uThumbnail">
+        <label for="thumb">Thumbnail</label>
+
+        <img id="headie" src="{{produccion.Header}}" style="width:100%; display:none"/>
+        <input type="file" id="header" placeholder="hola" style="display:none"  custom-on-change="uHeader">
+        <label for="header">Cover</label>
+        
+        <input type="text" placeholder="Titulo" spellcheck="false" ng-model="pro.Name" ng-show="lang != 'eng'"/>
+        <br><br>
+        <input type="text" placeholder="Subtitulo" spellcheck="false" ng-model="pro.Subtitle" ng-show="lang != 'eng'"/>
+        <br><br>
+        
+        <div ng-repeat="item in addies | orderBy: 'Order'">
+            <hr>
+            <span class="sectit">
+                <span ng-if="item.Type == 'imgvid'">Image or Video</span>
+                <span ng-if="item.Type == 'm-04 paragraph'">Paragraph</span>
+                <span ng-if="item.Type == 'm-01 quote'">Quote</span>
+            </span>
+            <textarea ng-show="lang != 'eng'" ng-model="item.Src" ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Escribe aquí" ng-blur="addies.$save(item)"></textarea>
+            <textarea ng-model="item.Src" ng-if="item.Type == 'embed'" placeholder="Paste iframe here" ng-blur="addies.$save(item)"></textarea>
+            
+            
+            <img ng-if="item.Type == 'imgvid' && item.Src" id="IMG{{item.$id}}" src="{{item.Src}}" style="width:100%;"/>
+            <input type="file" id="{{item.$id}}" style="display:none" custom-on-change="ChangeIMG" />
+            <label for="{{item.$id}}" ng-if="item.Type == 'imgvid'">Select Picture or Video</label>
+
+            <div class="halfers" ng-if="item.Type == 'imgvid'">
+                <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-01" id="mtfull" name="horvsver">
+                <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-04" id="mtcenter" name="horvsver">
+                <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-02" id="mthalf" name="horvsver">
+                <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-03" id="mtthird" name="horvsver">
+                <label ng-if="item.Type == 'imgvid'" for="mtfull" class="half" ng-class="{selected: item.MediaType == 'm-01'}">Full Width</label>
+                <label ng-if="item.Type == 'imgvid'" for="mtcenter" class="half" ng-class="{selected: item.MediaType == 'm-04'}">Center</label>
+                <label ng-if="item.Type == 'imgvid'" for="mthalf" class="half" ng-class="{selected: item.MediaType == 'm-02'}">Half</label>
+                <label ng-if="item.Type == 'imgvid'" for="mtthird" class="half" ng-class="{selected: item.MediaType == 'm-03'}">Third</label>
+            </div>
+            
+            
+            <div style="display:block;height:40px">
+                <div class="blockieup">
+                    <div id="{{item.$id}}" class="top" ng-click="upNum($event, item)">
+                        <img id="{{item.$id}}" src="img/up.svg"/>
+                    </div>
+                    <div id="{{item.$id}}" class="down" ng-click="downNum($event, item)">
+                        <img id="{{item.$id}}" src="img/down.svg"/>
+                    </div>
+                    
+                </div>
+                <span style="float:right; margin-top:15px;" id="{{item.$id}}" ng-click="deleteAddonie($event, item)" class="ngremove">Remove</span>
+            </div>
+        </div>
+        <hr>
+        <div style="text-align:center;">
+            <div class="plusbutton" ng-click="newAddonImg()">
+                <img src="img/img.svg"/>
+            </div>
+            <div class="plusbutton" ng-click="newAddonText()">
+                <img src="img/text.svg"/>
+            </div>
+            <div class="plusbutton" ng-click="newAddonQuote()">
+                <img src="img/quote.svg"/>
+            </div>
+        </div>
+        <hr>
+        <input type="text" placeholder="URL" spellcheck="false" ng-model="produccion.Url" ng-trim="false" ng-change="produccion.Url = produccion.Url.split(' ').join('')"/>
+        <br><br>
+        <textarea placeholder="Descripcion SEO" ng-model="produccion.SeoDesc"></textarea>
+        <br>
+        <div class="halfers">
+            <input type="radio" ng-model="produccion.MediaType" value="m-01" id="promtfull" name="horvsver" checked="checked">
+            <input type="radio" ng-model="produccion.MediaType" value="m-04" id="promtcenter" name="horvsver">
+            <input type="radio" ng-model="produccion.MediaType" value="m-02" id="promthalf" name="horvsver">
+            <input type="radio" ng-model="produccion.MediaType" value="m-03" id="promtthird" name="horvsver">
+            <label for="promtfull" class="half" ng-class="{selected: produccion.MediaType == 'm-01'}">Full Width</label>
+            <label for="promtcenter" class="half" ng-class="{selected: produccion.MediaType == 'm-04'}">Center</label>
+            <label for="promthalf" class="half" ng-class="{selected: produccion.MediaType == 'm-02'}">Half</label>
+            <label for="promtthird" class="half" ng-class="{selected: produccion.MediaType == 'm-03'}">Third</label>
+        </div>
+        <hr>
+        <button id="btnLogin" type="submit" ng-click="produccion.$save()">Guardar</button>
+    </form>
+</div>
+<div class="footie">
+    <span>&copy; comcomcom 2020</span>
+</div> -->
+<!-- Switch -->
+<!-- <a href="/produccion/{{produccion.$id}}" target="_blank" class="gotoproduccion">
+    View produccion
+</a>
+<div class="onoffswitch">
+    <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+<progress id="uploader" class="off"></progress>
+    </div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div> -->
+
+<div ng-if="realog === 'yes'">
+    <style>
+        body {
+            padding: 0px 10px;
+            margin-bottom: 0px;
+        }
+    </style>
+    <div id="login" class="title"> Edit Article
+        <div class="meniu">
+            <div class="leftleft">
+                <a href="/cccproduccion">
+                    <span class="material-icons">keyboard_backspace</span> Back
+                </a>
+            </div>
+            <!-- <div class="centiecentie">{{produccion.Name}}</div> -->
+            <div class="centiecentie">IN THE PARK ADMIN</div>
+            <div class="rightright">&nbsp;</div>
+        </div>
+        <form>
+            <img id="thumbie" src="{{produccion.Thumbnail}}" style="width:100%;">
+            <input type="file" id="thumb" placeholder="thumbnail" style="display:none" custom-on-change="uThumbnail">
+            <label for="thumb">Thumbnail</label>
+            <img id="headie" src="{{produccion.Header}}" style="width:100%; display:none">
+            <input type="file" id="header" placeholder="thumbnail" style="display:none" custom-on-change="uHeader">
+            <label for="header">Cover</label>
+
+            <div class="input">
+                <label>Título</label>
+                <input type="text" placeholder="Escribe aquí" spellcheck="false" ng-model="produccion.Name"
+                    ng-show="lang != 'eng'">
+            </div>
+
+            <div class="input">
+                <label>Subtítulo</label>
+                <input type=text placeholder="Escribe aquí" spellcheck="false" ng-model="produccion.Subtitle"
+                    ng-show="lang != 'eng'">
+            </div>
+
+            <div ng-repeat="item in addies | orderBy: 'Order'">
+                <hr>
+                <span class="sectit">
+                    <span ng-if="item.Type == 'imgvid'">Image or Video</span>
+                    <span ng-if="item.Type == 'm-04 paragraph'">Paragraph</span>
+                    <span ng-if="item.Type == 'm-01 quote'">Quote</span>
+                </span>
+                <textarea ng-show="lang != 'eng'" ng-model="item.Src"
+                    ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Escribe aquí"
+                    ng-blur="addies.$save(item)"></textarea>
+                <textarea ng-model="item.Src" ng-if="item.Type == 'embed'" placeholder="Paste iframe here"
+                    ng-blur="addies.$save(item)"></textarea>
+                <img ng-if="item.Type == 'imgvid' && item.Src" id="IMG{{item.$id}}" src="{{item.Src}}" style="width:100%;">
+                <input type="file" id="{{item.$id}}" style="display:none" custom-on-change="ChangeIMG">
+                <label for="{{item.$id}}" ng-if="item.Type == 'imgvid'">Select Picture or Video</label>
+                <div class="halfers" ng-if="item.Type == 'imgvid'">
+                    <p>Select the size of the thumbnail inside the category.</p>
+                    <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-01" id="mtfull"
+                        name="horvsver">
+                    <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-04" id="mtcenter"
+                        name="horvsver">
+                    <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-02" id="mthalf"
+                        name="horvsver">
+                    <input ng-if="item.Type == 'imgvid'" type="radio" ng-model="item.MediaType" value="m-03" id="mtthird"
+                        name="horvsver">
+                    <label ng-if="item.Type == 'imgvid'" for="mtfull" class="half"
+                        ng-class="{selected: item.MediaType == 'm-01'}">Full Width</label>
+                    <label ng-if="item.Type == 'imgvid'" for="mtcenter" class="half"
+                        ng-class="{selected: item.MediaType == 'm-04'}">Center</label>
+                    <label ng-if="item.Type == 'imgvid'" for="mthalf" class="half"
+                        ng-class="{selected: item.MediaType == 'm-02'}">Half</label>
+                    <label ng-if="item.Type == 'imgvid'" for="mtthird" class="half"
+                        ng-class="{selected: item.MediaType == 'm-03'}">Third</label>
+                </div>
+                <div style="display:block; height:40px">
+                    <div class="blockieup">
+                        <div id="{{item.$id}}" class="top" ng-click="upNum($event, item)">
+                            <span id="{{item.$id}}" class="material-icons">expand_less</span>
+                        </div>
+                        <div id="{{item.$id}}" class="down" ng-click="downNum($event, item)">
+                            <span id="{{item.$id}}" class="material-icons">expand_more</span>
+                        </div>
+                    </div>
+                    <span style="float:right; margin-top:15px;" id="{{item.$id}}" ng-click="deleteAddonie($event, item)"
+                        class="ngremove">Remove</span>
+                </div>
+            </div>
+            <hr>
+            <div style=text-align:center;>
+                <label class="labl">Add new content blocks</label>
+                <div class="plusbutton" ng-click="newAddonImg()">
+                    <span class="material-icons">photo</span>
+                </div>
+                <div class="plusbutton" ng-click="newAddonText()">
+                    <span class="material-icons">notes</span>
+                </div>
+                <div class="plusbutton" ng-click="newAddonQuote()">
+                    <span class="material-icons">format_quote</span>
+                </div>
+                <hr>
+
+                <div class="input">
+                    <label>Page URL</label>
+                    <input type="text" placeholder="This will appear in your URL bar." spellcheck="false"
+                        ng-model="produccion.Url" ng-trim="false"
+                        ng-change="produccion.Url = produccion.Url.split(\' \').join(\'\')">
+                </div>
+
+                <div class="input">
+                    <label>Description SEO</label>
+                    <textarea placeholder="Type here the page's description for search engines."
+                        ng-model="produccion.SeoDesc"></textarea>
+                </div>
+                <hr>
+
+                <div class="halfers">
+                    <p>Select the size of the thumbnail inside the category.</p>
+                    <input type="radio" ng-model="produccion.MediaType" value="m-01" id="promtfull" name="horvsver" checked>
+                    <input type="radio" ng-model="produccion.MediaType" value="m-04" id="promtcenter" name="horvsver">
+                    <input type="radio" ng-model="produccion.MediaType" value="m-02" id="promthalf" name="horvsver">
+                    <input type="radio" ng-model="produccion.MediaType" value="m-03" id="promtthird" name="horvsver">
+                    <label for="promtfull" class="half" ng-class="{selected: produccion.MediaType == 'm-01'}">Full
+                        Width</label>
+                    <label for="promtcenter" class="half" ng-class="{selected: produccion.MediaType == 'm-04'}">Center</label>
+                    <label for="promthalf" class="half" ng-class="{selected: produccion.MediaType == 'm-02'}">Half</label>
+                    <label for="promtthird" class="half" ng-class="{selected: produccion.MediaType == 'm-03'}">Third</label>
+                </div>
+                <hr>
+                <button id="btnLogin" type="submit" ng-click="produccion.$save()">Guardar</button>
+        </form>
+    </div>
+    <a href="/produccion/{{produccion.$id}}" target="_blank" class="previewpage">
+        Preview Page <span class="material-icons">call_made</span>
+    </a>
+    <div class="onoffswitch">
+        <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch"
+            class="onoffswitch-checkbox" id="myonoffswitch" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+    <progress id="uploader" class="off"></progress>
+</div>
+<div ng-if="realog != 'yes'" ng-init="tologin()"></div>

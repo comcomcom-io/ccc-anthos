@@ -1,0 +1,65 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+<div id="nswitch" class="{{nswitch.$value}}">
+    <img class="{{nswitch.$value}}" src="img/commies.svg"/>
+</div>
+<div id="blockie" class="{{Dsettings.loadedie}}">
+    <div class="modernloader {{Dsettings.loaded}}" style="background-color:#fafafa"></div>
+</div>
+<div id="studio">
+    <img src="{{studioSettings.Header}}" class="header"/>
+    <div class="content clearon">
+        <div class="left">
+            <p ng-if="realan != 'eng'" style="white-space: pre-wrap;">{{studioSettings.About}}</p>
+            <p ng-if="realan == 'eng'" style="white-space: pre-wrap;">{{studioSettings.AboutE}}</p>
+            <p ng-if="realan != 'eng'" style="white-space: pre-wrap;">{{studioSettings.Clients}}</p>
+            <p ng-if="realan == 'eng'" style="white-space: pre-wrap;">{{studioSettings.ClientsE}}</p>
+        </div>
+        <div class="right clearon">
+            <ul class="services l">
+                <li ng-if="realan != 'eng'" class="title">Servicios</li>
+                <li ng-if="realan == 'eng'" class="title">Services</li>
+                <p ng-if="realan != 'eng'" style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{ studioSettings.ServicesL }}</p>
+                <p ng-if="realan == 'eng'" style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{ studioSettings.ServicesLE }}</p>
+            </ul>
+            <ul class="services">
+                <li class="title">&nbsp;</li>
+                <p ng-if="realan != 'eng'" style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{ studioSettings.ServicesR }}</p>
+                <p ng-if="realan == 'eng'" style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{ studioSettings.ServicesRE }}</p>
+            </ul>
+        </div>
+    </div>
+    <div class="content clearon">
+        <div class="left">
+            <ul class="services l Req">
+                <li class="title">Communal</li>
+                <p style="white-space: pre-wrap; line-height:22px;opacity:.5;">{{studioSettings.Address}}</p>
+            </ul>
+        </div>
+        <div class="right clearon">
+            <ul class="services l">
+                <li ng-if="realan != 'eng'" class="title">Nuevos Negocios</li>
+                <li ng-if="realan == 'eng'" class="title">New Business</li>
+                <li><a href="mailto:{{ studioSettings.Newbusiness.Mail }}" target="_top">{{ studioSettings.Newbusiness.Mail }}</a></li>
+                <li><a href="tel:{{ studioSettings.Newbusiness.Phone.split(' ').join('') }}">{{ studioSettings.Newbusiness.Phone }}</a></li>
+            </ul>
+            <ul class="services">
+                <li ng-if="realan != 'eng'" class="title">Sitios Relacionados</li>
+                <li ng-if="realan == 'eng'" class="title">Linked Sites</li>
+                <li ng-repeat="item in studioSettingsSocial">
+                    <a href="{{item.Url}}" target="_blank" ng-if="$index>1">{{item.Name}}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="grid">
+        <div ng-repeat="item in StudioGrid" class="thumbnail {{item.Ratio}}" ng-init="mason()" custom-on-change="mason" style="cursor:default !important; background-image: url({{item.Src}}); ">
+        </div>
+</div>
+
+
+
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

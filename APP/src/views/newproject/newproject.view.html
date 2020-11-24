@@ -1,0 +1,115 @@
+<div ng-if="realog === 'yes'">
+<style>
+    body{
+        padding: 0px 10px;
+        margin-bottom: 0px;
+    }
+</style>
+<div id="login">
+    <img class="logo" src="img/commies.svg"/>
+    
+    <div class="meniu">
+        <div class="leftleft"><a href="/projectssettings"><</a></div>
+        <div class="centiecentie">New Project</div>
+        <div class="rightright">&nbsp;</div>
+    </div>
+    
+    <form>
+        <img id="thumbie" src="" style="width:100%; display:none"/>
+        <input type="file" id="thumb" placeholder="hola" style="display:none"  custom-on-change="uThumbnail">
+        <label for="thumb">Thumbnail</label>
+        <input type="text" placeholder="Nombre" spellcheck="false" ng-model="pro.Name" ng-show="lang != 'eng'"/>
+        <input type="text" placeholder="Name" spellcheck="false" ng-model="pro.NameE" ng-show="lang == 'eng'"/>
+        <input type="text" placeholder="URL" spellcheck="false" ng-model="pro.Url" ng-trim="false" ng-change="pro.Url = pro.Url.split(' ').join('')"/>
+        <textarea placeholder="SEO Description" ng-model="pro.SeoDesc"></textarea>
+        <input type="text" placeholder="Categorias" spellcheck="false" ng-model="pro.Tags" ng-show="lang != 'eng'"/>
+        <input type="text" placeholder="Tags" spellcheck="false" ng-model="pro.TagsE" ng-show="lang == 'eng'"/>
+        <div class="halfers">
+            <input type="radio" ng-model="pro.Settings.Ratio" value="l" id="horwin" name="horvsver" checked="checked">
+            <input type="radio" ng-model="pro.Settings.Ratio" value="p" id="verwin" name="horvsver">
+            <label for="horwin" class="half" ng-class="{selected: pro.Settings.Ratio == 'l'}">Landscape</label>
+            <label for="verwin" class="half" ng-class="{selected: pro.Settings.Ratio == 'p'}">Portrait</label>
+        </div>
+        <hr>
+        <img id="headie" src="" style="width:100%; display:none"/>
+        <input type="file" id="header" placeholder="hola" style="display:none"  custom-on-change="uHeader">
+        <label for="header">Header</label>
+        <input type="text" placeholder="Titulo" spellcheck="false" ng-model="pro.Title" id="titulo" ng-show="lang != 'eng'"/>
+        <input type="text" placeholder="Title" spellcheck="false" ng-model="pro.TitleE" id="title" ng-show="lang == 'eng'"/>
+        
+        
+        <textarea rows="4" placeholder="Descripcion" id="descripcion" ng-model="pro.Description" spellcheck="false" ng-show="lang != 'eng'"></textarea>
+        <textarea rows="4" placeholder="Description" id="description" ng-model="pro.DescriptionE" spellcheck="false" ng-show="lang == 'eng'"></textarea>
+        <div ng-repeat="item in pro.Addon track by $index">
+            <hr>
+            <span class="sectit">
+                
+                <span ng-if="item.Type == 'imgvid'">Image or Video</span>
+                <span ng-if="item.Type == 'text'">Paragraph</span>
+                <span ng-if="item.Type == 'twoc'">Two Columns</span>
+                <span ng-if="item.Type == 'quote'">Quote</span>
+                <span ng-if="item.Type == 'embed'">Embed</span>
+                
+            </span>
+            <textarea ng-show="lang != 'eng'" ng-model="item.Src" ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Escribe aquí"></textarea>
+            <textarea ng-show="lang == 'eng'" ng-model="item.SrcE" ng-if="item.Type != 'imgvid' && item.Type != 'embed'" placeholder="Type here"></textarea>
+            <textarea ng-model="item.Src" ng-if="item.Type == 'embed'" placeholder="Paste iframe here"></textarea>
+            <img id="hollie{{$index}}" style="width:100%; display:none" ng-if="item.Type == 'imgvid'"/>
+            <input type="file" id="iv{{$index}}" placeholder="hola" style="display:none" ng-if="item.Type == 'imgvid'" custom-on-change="upAddonImgVid" name="{{$index}}"/>
+        <label for="iv{{$index}}" ng-if="item.Type == 'imgvid'">Select Picture or Video</label>
+            
+            
+            <div ng-if="item.Type == 'imgvid'" class="halfers">
+                <input type="radio" ng-model="item.Orientation" value="landscape" id="horwin{{$index}}" name="horvsver" checked="checked">
+                <input type="radio" ng-model="item.Orientation" value="portrait" id="verwin{{$index}}" name="horvsver">
+                <label for="horwin{{$index}}" class="half" ng-class="{selected: item.Ratio == 'landscape'}">Landscape</label>
+                <label for="verwin{{$index}}" class="half" ng-class="{selected: item.Orientation == 'portrait'}">Portrait</label>
+            </div>
+            
+            <div style="text-align:right">
+                <span ng-click="deleteAddon($index, item)" class="ngremove">Remove</span>
+            </div>
+        </div>
+        <hr>
+        <div style="text-align:center;">
+            <div class="plusbutton" ng-click="newAddonImgVid()">
+                <img src="img/img.svg"/>
+            </div>
+            <div class="plusbutton" ng-click="newAddonText()">
+                <img src="img/text.svg"/>
+            </div>
+            <div class="plusbutton" ng-click="newAddonTwoc()">
+                <img src="img/twoc.svg"/>
+            </div>
+            <div class="plusbutton" ng-click="newAddonQuote()">
+                <img src="img/quote.svg"/>
+            </div>
+            <div class="plusbutton" ng-click="newAddonEmbed()">
+                <img src="img/embed.svg"/>
+            </div>
+        </div>
+        <hr>
+        <textarea rows="4" placeholder="Areas desarrolladas" id="descripcion" ng-model="pro.Areas" spellcheck="false" ng-show="lang != 'eng'"></textarea>
+        <textarea rows="4" placeholder="Developed Areas" id="description" ng-model="pro.AreadE" spellcheck="false" ng-show="lang == 'eng'"></textarea>
+        <textarea rows="4" placeholder="Creditos" id="descripcion" ng-model="pro.Credits" spellcheck="false" ng-show="lang != 'eng'"></textarea>
+        <textarea rows="4" placeholder="Credits" id="description" ng-model="pro.CreditsE" spellcheck="false" ng-show="lang == 'eng'"></textarea>
+        <hr>
+        <button id="btnLogin" type="submit" ng-disabled = "waitSave != 0" ng-click="newP()">{{buttonMgs}}</button>
+        <div ng-if="errorMsg"> {{errorMsg}} </div>
+    </form>
+</div>
+    <progress id="uploader" class="off"></progress>
+<div class="footie">
+    <span>&copy; Communal Studio 2017</span>
+</div>
+<!-- Switch -->
+<div class="onoffswitch">
+    <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+
+    </div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div>

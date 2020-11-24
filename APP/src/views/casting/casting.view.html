@@ -1,0 +1,18 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+<div id="wrapper">
+    <div id="modules">
+
+        <div ng-repeat="item in casting | orderBy: 'Order'" ng-if="item.Visible == 'On'" class="module {{item.MediaType}}">
+            <div class="media">
+                <a href="/casting/{{item.$id}}"><img src="{{item.Thumbnail}}"></a>
+            </div>
+            <div class="data">
+                <div class="date">{{item.dateday}} {{item.datemonth}} {{item.dateyear}}</div>
+                <div class="title"><a href="/casting/{{item.$id}}">{{item.Name}}</a></div>
+                <div class="subtitle"><a href="/casting/{{item.$id}}">{{item.Subtitle}}</a></div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

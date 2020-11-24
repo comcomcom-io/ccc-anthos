@@ -1,0 +1,253 @@
+
+<style>
+            #blockie{
+                display: block;
+                width: 100vw;
+                height: 100vh;
+                max-height: 100vh;
+                position: fixed;
+                z-index: 10000;
+                overflow: hidden;
+                left: 0;
+                top: 0;
+            }
+            #blockie.hidie{
+                animation:fadeh 0s;
+                animation-timing-function:linear;
+                animation-delay: 2s;
+                animation-fill-mode:forwards;
+                animation-iteration-count: 1;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation:fadeh 0s;
+                -webkit-animation-timing-function:linear;
+                -webkit-animation-delay: 2s;
+                -webkit-animation-fill-mode: forwards;
+            }
+            #blockie .modernloader{
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                background-color: #fafafa;
+                overflow: hidden;
+                opacity: 1;
+                transition: background-color 1s ease;
+            }
+            #blockie .modernloader.true {
+                opacity: 1;
+                animation:fadeout 1s;
+                animation-timing-function:linear;
+                animation-delay: 1s;
+                animation-fill-mode:forwards;
+                animation-iteration-count: 1;
+                -webkit-animation-iteration-count: 1;
+                -webkit-animation:fadeout 1s;
+                -webkit-animation-timing-function:linear;
+                -webkit-animation-delay: 1s;
+                -webkit-animation-fill-mode: forwards;
+            }
+            .modernloader.values{
+                background-color: #fafafa;
+                content: {{Dsettings.loadedie}};
+                
+                
+            }
+</style>
+<div id="nswitch" class="{{nswitch.$value}}">
+    <img class="{{nswitch.$value}}" src="img/commies.svg"/>
+</div>
+<div id="blockie" class="{{Dsettings.loadedie}}">
+    <div class="modernloader {{Dsettings.loaded}}" style="background-color:#fafafa"></div>
+</div>
+
+
+
+
+<div class="nosmall">
+<div id="myP" class="testo">
+    <header >
+        <span class="leef">
+            <span ng-if="realan == 'eng'">
+                <span ng-click="thereload()" style="cursor:pointer;">Work</span>
+            </span>
+            <span ng-if="realan != 'eng'">
+                <span ng-click="thereload()" style="cursor:pointer;">Proyectos</span>
+            </span>
+        </span>
+    <a href="/"><img class="logo" src="img/commies.svg"/></a>
+        <span class="riig">
+            <span ng-if="realan == 'eng'" style="float:right">
+                <a href="/studio">Studio</a>
+            </span>
+            <span ng-if="realan != 'eng'" style="float:right">
+                <a href="/studio">Estudio</a>
+            </span>
+        </span>
+    </header>
+    
+
+
+<div ng-if="realan != 'eng'" id="filter" class="apagadooo">
+    <span ng-if="FilTime != 'Open'">
+        <span ng-click="openfil()" ng-if=" filtEsp.Tags === '' ">Todas las Disciplinas</span>
+        <span style="cursor: default !important">
+            <span ng-click="openfil()">{{filtEsp.Tags}}</span>
+        </span>
+    </span>
+    <span ng-click="closefil()" ng-if="FilTime == 'Open'">
+        <span ng-if=" filtEsp.Tags != '' ">{{ filtEsp.Tags }}</span>
+        <span ng-if=" filtEsp.Tags == '' ">Todas las Disciplinas</span>
+    </span><!-- After Selected -->
+        <ul id="filemon" class="off">
+            <li ng-if=" filtEsp.Tags != '' " ng-click="closefil(); filtEsp.Tags = ''">Todas las Disciplinas</li><!-- inside -->
+            <li ng-if=" filtEsp.Tags != item.Data " id="{{item.Data}}" ng-repeat="item in Filters" ng-click="closefil(); filtFun($event)">{{item.Data}}</li>
+        </ul>
+</div>
+    
+    
+    
+<div ng-if="realan == 'eng'" id="filter" class="apagadooo">
+    <span ng-if="FilTime != 'Open'">
+        <span ng-click="openfil()" ng-if=" filtEsp.TagsE === '' ">All Disciplines</span>
+        <span style="cursor: default !important">
+            <span ng-click="openfil()">{{filtEsp.TagsE}}</span>
+        </span>
+    </span>
+    <span ng-click="closefilrr()" ng-if="FilTime == 'Open'">
+        <span ng-if=" filtEsp.TagsE != '' ">{{ filtEsp.TagsE }}</span>
+        <span ng-if=" filtEsp.TagsE == '' ">All Disciplines</span>
+    </span><!-- After Selected -->
+        <ul id="filemon" class="off">
+            <li ng-if=" filtEsp.TagsE != '' " ng-click="closefilrr(); filtEsp.TagsE = ''">All Disciplines</li><!-- inside -->
+            <li ng-if=" filtEsp.TagsE != item.Data " id="{{item.Data}}" ng-repeat="item in FiltersE" ng-click="closefilrr(); filtFunE($event)">{{item.Data}}</li>
+        </ul>
+</div>
+    
+
+    
+    
+
+</div>  
+</div>
+
+
+
+
+
+<div class="nobig">
+    <ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+    
+    
+    <header ng-init="languageSet()">
+    <span ng-if="realan == 'eng'"><span ng-click="thereload()" style="cursor:pointer;">Work</span></span>
+    <span ng-if="realan != 'eng'"><span ng-click="thereload()" style="cursor:pointer;">Proyectos</span></span>
+    <a href="/"><img class="logo" src="img/commies.svg"/></a>
+    <span ng-if="realan == 'eng'" style="float:right"><a href="/studio">Studio</a></span>
+    <span ng-if="realan != 'eng'" style="float:right"><a href="/studio">Estudio</a></span>
+</header>
+<div id="myP">
+    <header >
+        <span class="leef">
+            <span ng-if="realan == 'eng'"><span ng-click="thereload()" style="cursor:pointer;">Work</span></span>
+            <span ng-if="realan != 'eng'"><span ng-click="thereload()" style="cursor:pointer;">Proyectos</span></span>
+        </span>
+        <a href="/">
+            <img class="logo" src="img/commies.svg"/>
+        </a>
+        <span class="riig">
+            <span ng-if="realan == 'eng'" style="float:right">
+                <a href="/studio">Studio</a>
+            </span>
+            <span ng-if="realan != 'eng'" style="float:right">
+                <a href="/studio">Estudio</a>
+            </span>
+        </span>
+    </header>
+</div>
+    
+    
+</div>
+<div class="nosmall">
+<header ng-init="languageSet()" style="position:absolute; box-sizing: border-box; width:100%;">
+    <span ng-if="realan == 'eng'"><span ng-click="thereload()" style="cursor:pointer;">Work</span></span>
+    <span ng-if="realan != 'eng'"><span ng-click="thereload()" style="cursor:pointer;">Proyectos</span></span>
+    <a href="/"><img class="logo" src="img/commies.svg" style="padding-right:160px;"/></a>
+    <span ng-if="realan == 'eng'" style="float:right; margin-right:160px;"><a href="/studio">Studio</a></span>
+    <span ng-if="realan != 'eng'" style="float:right; margin-right:160px;"><a href="/studio">Estudio</a></span>
+</header>
+
+    
+    
+    
+    
+<div ng-if="realan != 'eng'" id="filter">
+    <span ng-if="FilTime != 'Open'">
+        <span ng-click="openfil()" ng-if=" filtEsp.Tags === '' ">Todas las Disciplinas</span>
+        <span style="cursor: default !important">
+            <span ng-click="openfil()">{{filtEsp.Tags}}</span>
+        </span>
+    </span>
+    <span ng-click="closefil()" ng-if="FilTime == 'Open'">
+        <span ng-if=" filtEsp.Tags != '' ">{{ filtEsp.Tags }}</span>
+        <span ng-if=" filtEsp.Tags == '' ">Todas las Disciplinas</span>
+    </span><!-- After Selected -->
+        <ul id="fil" class="off">
+            <li ng-if=" filtEsp.Tags != '' " ng-click="closefil(); filtEsp.Tags = ''">Todas las Disciplinas</li><!-- inside -->
+            <li ng-if=" filtEsp.Tags != item.Data " id="{{item.Data}}" ng-repeat="item in Filters" ng-click="closefil(); filtFun($event)">{{item.Data}}</li>
+        </ul>
+</div>
+    
+    
+    
+    
+    
+  
+
+<div ng-if="realan == 'eng'" id="filter">
+    <span ng-if="FilTime != 'Open'">
+        <span ng-click="openfil()" ng-if=" filtEsp.TagsE === '' ">All Disciplines</span>
+        <span style="cursor: default !important">
+            <span ng-click="openfil()">{{filtEsp.TagsE}}</span>
+        </span>
+    </span>
+    <span ng-click="closefilrr()" ng-if="FilTime == 'Open'">
+        <span ng-if=" filtEsp.TagsE != '' ">{{ filtEsp.TagsE }}</span>
+        <span ng-if=" filtEsp.TagsE == '' ">All Disciplines</span>
+    </span><!-- After Selected -->
+    <ul id="fil" class="off">
+        <li ng-if=" filtEsp.TagsE != '' " ng-click="closefilrr(); filtEsp.TagsE = ''">All Disciplines</li><!-- inside -->
+            <li ng-if=" filtEsp.TagsE != item.Data " id="{{item.Data}}" ng-repeat="item in FiltersE" ng-click="closefilrr(); filtFunE($event)">{{item.Data}}</li>
+    </ul>
+</div>    
+
+
+    
+
+    
+    
+    
+</div>
+
+<!--filter:filtEsp -->
+
+<div class="grid cincuentados">
+        <a ng-repeat="item in projects | filter:filtEsp | orderBy: 'Order'" ng-if="item.Visible == 'On'" href="/project/{{item.$id}}" class="thumbnail {{item.Settings.Ratio}}" ng-init="mason()" custom-on-change="mason" style="background-image: url({{item.Thumbnail}});">
+            <div class="thover">
+                <div class="ttop">
+                    <span class="commm" ng-if="realan != 'eng'">
+                        <div class="namiel">{{item.Name}}</div>
+                        <div class="tagiel">{{item.Tags}}</div>
+                    </span>
+                    <span class="commm" ng-if="realan == 'eng'">
+                        <div class="namiel">{{item.NameE}}</div>
+                        <div class="tagiel">{{item.TagsE}}</div>
+                    </span>
+                </div>
+            </div>
+        </a>
+</div>
+    
+ <!-- Tags -->
+
+
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>
