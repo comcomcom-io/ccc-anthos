@@ -1,0 +1,253 @@
+<style>
+#related{
+    display: block;
+    width: 100%;
+    display: block;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0px auto;
+    padding: 0px 76px;
+    box-sizing: border-box;
+}
+#related::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+#related>.articles{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    padding: 26px 0px;
+}
+#related>.articles::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+#related>.articles>.article{
+    display: block;
+    width: 25%;
+    float: left;
+}
+#related>.articles>.article:nth-child(n+5) {
+    display: none;
+}
+#related>.articles>.article>.box{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+#related>.articles>.article>.box>.left{
+    display: flex;
+    width: 100px;
+    flex-grow: 1;
+    flex-basis: 100px;
+    flex-shrink: 0;
+}
+#related>.articles>.article>.box>.left img{
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    object-position: center center;
+}
+#related>.articles>.article>.box>.right{
+    display: flex;
+    height: auto;
+    width: 70%;
+    box-sizing: border-box;
+    padding: 0px 16px 0px 8px;
+}
+#related>.articles>.article>.box>.right>.top{
+    font-size: 16px;
+    font-weight: normal;
+    box-sizing: border-box;
+    padding-bottom: 16px;
+    width: 100%;
+    font-size: 20px
+}
+#related>.articles>.article>.box>.right>.top>span.date{
+    font-size: 12.8px;
+    display: block;;
+}
+#related>.articles>.article>.box>.right>.top>span.titleREL{
+    margin-top: 4px;
+    font-size: 20px;
+    display: block;
+    font-size: 20px;
+    line-height: 100%;
+    height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#related>.articles>.article>.box>.right>.bottom{
+    display: table-cell;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10.24px;
+    line-height: 100%;
+    /* or 10px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    /* Gray 3 */
+    color: #828282;
+}
+
+
+.masarticulos{
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 100%;
+  text-align: left;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+    width: 100%;
+    display: block;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0px auto;
+    padding: 0px 76px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media only screen and (max-width: 1180px) {
+  #related{
+    padding: 0px 44px;
+  }
+  .masarticulos{
+    padding: 0px 44px;
+  }
+}
+
+@media only screen and (max-width: 980px) {
+  #related>.articles>.article:nth-child(4){
+    display: none;
+  }
+  #related>.articles>.article{
+    display: block;
+    width: 33.33%;
+    float: left;
+  }
+}
+@media only screen and (max-width: 768px) {
+  
+  #related>.articles>.article{
+    display: block;
+    width: 100%;
+    float: left;
+  }
+  #related{
+    padding: 0px 24px;
+  }
+  .masarticulos{
+    padding: 0px 24px;
+  }
+  #related>.articles>.article>.box>.left{
+    display: flex;
+    width: 100px;
+  }
+  #related>.articles>.article>.box>.left>img{
+    width: 100%;
+    height: 140px;
+  }
+  #related>.articles>.article>.box>.right{
+    display: flex;
+    width: 80%;
+    padding: 0px 16px 0px 24px;
+  }
+  #related>.articles>.article{
+    margin-bottom: 44px;
+  }
+  #related>.articles>.article:nth-child(4){
+    display: flex;
+    margin-bottom: 0px;
+  }
+}
+
+
+
+</style>
+
+<div class="masarticulos">
+  Más Artículos
+</div>
+
+<div id="related" ng-if="location == '/' || location.includes('/management/')">
+    <div class="articles">
+      <div class="article" ng-repeat="item in produccion" ng-if="item.Featured == 'Yes'">
+        <div class="box">
+          <div class="left">
+            <a href="/produccion/{{item.Url}}"><img src="{{ item.Thumbnail }}"/></a>
+          </div>
+          <div class="right">
+              <div class="top">
+                <span class="date">{{ item.dateday }} {{ item.datemonth }} {{ item.dateyear }}</span>
+                <span class="titleREL">
+                  <a href="/produccion/{{item.Url}}">{{ item.Name }}</a>
+                </span>
+              </div>
+              <div class="bottom">
+                <a href="/produccion">Producción</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div id="related" ng-if="location.includes('/produccion') || location.includes('/produccion/')">
+  <div class="articles">
+    <div class="article" ng-repeat="item in casting" ng-if="item.Featured == 'Yes'">
+      <div class="box">
+        <div class="left">
+          <a href="/casting/{{item.Url}}"><img src="{{ item.Thumbnail }}"/></a>
+        </div>
+        <div class="right">
+            <div class="top">
+              <span class="date">{{ item.dateday }} {{ item.datemonth }} {{ item.dateyear }}</span>
+              <span class="titleREL">
+                <a href="/casting/{{item.Url}}">{{ item.Name }}</a>
+              </span>
+            </div>
+            <div class="bottom">
+              <a href="/casting">Casting</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="related" ng-if="location.includes('/casting') || location.includes('/casting/')">
+  <div class="articles">
+    <div class="article" ng-repeat="item in management" ng-if="item.Featured == 'Yes'">
+      <div class="box">
+        <div class="left">
+          <a href="/management/{{item.Url}}"><img src="{{ item.Thumbnail }}"/></a>
+        </div>
+        <div class="right">
+            <div class="top">
+              <span class="date">{{ item.dateday }} {{ item.datemonth }} {{ item.dateyear }}</span>
+              <span class="titleREL">
+                <a href="/management/{{item.Url}}">{{ item.Name }}</a>
+              </span>
+            </div>
+            <div class="bottom">
+              <a href="/management">Management</a>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

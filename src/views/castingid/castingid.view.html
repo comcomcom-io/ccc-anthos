@@ -1,0 +1,44 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+
+
+
+<div class="proyectos">
+  <div class="pin">
+    <div class="left">
+      <div class="media">
+        <img src="{{theproject.Header}}" />
+      </div>
+    </div>
+    <div class="right">
+      <div class="inner">
+        <div class="fixH">
+        </div><div class="cont">
+          <span class="type">{{theproject.TYPETYPE}}</span>
+          <h1 class="title">{{theproject.Name}}</h1>
+          <p class="paraph">{{theproject.Subtitle}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="repeater">
+
+    <style>
+      .item.paragraph{
+        width:100%;
+      }
+    </style>
+    <div ng-repeat="item in Addoniess | orderBy: 'Order'"  class="module m-center portrait {{item.Type}}">
+      <div class="inner">
+        <div ng-if="item.Type == 'imgvid'" class="media">
+          <img src="{{item.Src}}" />
+        </div>
+        <p ng-if="item.Type == 'paragraph'">{{item.Src}}</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>
+

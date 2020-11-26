@@ -1,0 +1,45 @@
+<div class="container">
+    <div class="leftfeed">
+
+        <div ng-repeat="item in management | limitTo: 7" class="module {{item.MediaPosition}} {{item.MediaType}}">
+            <div class="inner">
+            <div class="media">
+                <img src="{{item.Thumbnail}}" />
+            </div>
+            <!-- IF not Full -->
+            <div class="caption">
+                <span>{{item.Title}}</span>
+            </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="rightfeed">
+
+        <div ng-repeat="item in management | limitTo: 6" class="module {{item.MediaPosition}} {{item.MediaType}}">
+            <div class="inner">
+                <div class="media">
+                <img src="{{item.Thumbnail}}" />
+                </div>
+                <!-- IF not Full -->
+                <div class="caption">
+                <span>{{item.Title}}</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+  <div class="container-mobile">
+    <div ng-repeat="item in management | limitTo: 12" class="module {{item.MediaPosition}} {{item.MediaType}}">
+      <div class="inner">
+        <div class="media">
+          <img src="{{item.Thumbnail}}" />
+        </div>
+        <!-- IF not Full -->
+        <div class="caption">
+          <span>{{item.Title}}</span>
+        </div>
+      </div>
+    </div>
+  </div>

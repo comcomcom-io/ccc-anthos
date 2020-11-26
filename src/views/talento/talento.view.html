@@ -1,0 +1,32 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+<div id="wrapper">
+    <div id="modules" class="margin">
+        <style>
+            .media{
+                background-color: #fafafa;
+                background-position: center center;
+                background-size: cover;
+            }
+            .media img{
+                opacity: 0;
+            }
+            .media:hover img{
+                opacity: 1;
+            }
+        </style>
+        <div ng-repeat="item in talento | orderBy: 'Order'" ng-if="item.Visible == 'On'" class="module m-cast">
+            <style>
+                #{{item.$id}}.media {
+                    background-image: url({{item.Thumbnail}});
+                }
+            </style>
+            <div id="{{item.$id}}" class="media">
+                <a href="/talento/{{item.$id}}"><img src="{{item.ThumbnailTwo}}"></a>
+            </div>
+            <div class="data">
+                <a href="/talento/{{item.$id}}"><div class="titleTalento">{{item.Name}}</div></a>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

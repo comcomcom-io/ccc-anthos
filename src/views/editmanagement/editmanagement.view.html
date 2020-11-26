@@ -1,0 +1,102 @@
+<div ng-if="realog === 'yes'">
+<style>
+    body{
+        padding: 0px 10px;
+        margin-bottom: 0px;
+    }
+</style>
+<div id="login" class="title"> Edit Article
+    <img class="logo" src="https://firebasestorage.googleapis.com/v0/b/ccc-inthepark.appspot.com/o/cccms.svg?alt=media&token=08cf6e5b-636d-4b02-8c41-32fdc5906d80"/>
+    
+    <div class="meniu">
+        <div class="leftleft">
+            <a href="/cccmanagement">
+                <span class="material-icons">keyboard_backspace</span> Back
+            </a>
+        </div>
+        <!-- <div class="centiecentie">{{produccion.Name}}</div> -->
+        <div class="centiecentie">Anthos Admin</div>
+        <div class="rightright">&nbsp;</div>
+    </div>
+    
+    <form>
+        <img id="thumbie" src="{{management.Thumbnail}}" style="width:100%;"/>
+        <input type="file" id="thumb" placeholder="hola" style="display:none"  custom-on-change="uThumbnail">
+        <label for="thumb">Thumbnail</label>
+
+        <div class="input">
+            <label>Title</label>
+            <input type="text" placeholder="This is the title" spellcheck="false" ng-model="management.Title" ng-trim="false">
+        </div>
+
+        <div class="input">
+            <label>Name</label>
+            <input type="text" placeholder="Identify this item" spellcheck="false" ng-model="management.Url" ng-trim="false" ng-change="management.Url = management.Url.split(\' \').join(\'\')">
+        </div>
+
+        <div class="input">
+            <label>URL (If Any)</label>
+            <input type="text" placeholder="Place URL if any" spellcheck="false" ng-model="management.LINK">
+        </div>
+
+        <hr>
+            
+        <div class="halfers">
+            <p>Select the size of the thumbnail inside the category.</p>
+            <input type="radio" ng-model="management.MediaType" value="fit" id="promtfull" name="horvsver" checked>
+            <input type="radio" ng-model="management.MediaType" value="portrait" id="promtcenter" name="horvsver">
+            <input type="radio" ng-model="management.MediaType" value="landscape" id="promthalf" name="horvsver">
+            <input type="radio" ng-model="management.MediaType" value="square" id="promtthird" name="horvsver">
+            <label for="promtfull" class="half" ng-class="{selected: management.MediaType == 'fit'}">Full</label>
+            <label for="promtcenter" class="half" ng-class="{selected: management.MediaType == 'portrait'}">Portrait</label>
+            <label for="promthalf" class="half" ng-class="{selected: management.MediaType == 'landscape'}">landscape</label>
+            <label for="promtthird" class="half" ng-class="{selected: management.MediaType == 'square'}">Square</label>
+        </div>
+
+        <hr>
+
+        <div class="halfers">
+            <p>Select Position.</p>
+            <input type="radio" ng-model="management.MediaPosition" value="m-full" id="m-full" name="horvsver" checked>
+            <input type="radio" ng-model="management.MediaPosition" value="m-center" id="m-center" name="horvsver" checked>
+            <input type="radio" ng-model="management.MediaPosition" value="m-north" id="m-north" name="horvsver">
+            <input type="radio" ng-model="management.MediaPosition" value="m-northeast" id="m-northeast" name="horvsver">
+            <input type="radio" ng-model="management.MediaPosition" value="m-east" id="m-east" name="horvsver">
+
+            <input type="radio" ng-model="management.MediaPosition" value="m-southeast" id="m-southeast" name="horvsver">
+            <input type="radio" ng-model="management.MediaPosition" value="m-south" id="m-south" name="horvsver">
+            <input type="radio" ng-model="management.MediaPosition" value="m-southwest" id="m-southwest" name="horvsver">
+            <input type="radio" ng-model="management.MediaPosition" value="m-west" id="m-west" name="horvsver">
+            <input type="radio" ng-model="management.MediaPosition" value="m-northwest" id="m-northwest" name="horvsver">
+
+            <label for="m-full" class="half" ng-class="{selected: management.MediaPosition == 'm-full'}">full</label>
+            <label for="m-center" class="half" ng-class="{selected: management.MediaPosition == 'm-center'}">Center</label>
+            <label for="m-north" class="half" ng-class="{selected: management.MediaPosition == 'm-north'}">north</label>
+            <label for="m-northeast" class="half" ng-class="{selected: management.MediaPosition == 'm-northeast'}">northeast</label>
+            <label for="m-east" class="half" ng-class="{selected: management.MediaPosition == 'm-east'}">m-east</label>
+
+            <label for="m-southeast" class="half" ng-class="{selected: management.MediaPosition == 'm-southeast'}">m-southeast</label>
+            <label for="m-south" class="half" ng-class="{selected: management.MediaPosition == 'm-south'}">m-south</label>
+            <label for="m-southwest" class="half" ng-class="{selected: management.MediaPosition == 'm-southwest'}">m-southwest</label>
+            <label for="m-west" class="half" ng-class="{selected: management.MediaPosition == 'm-west'}">m-west</label>
+            <label for="m-northwest" class="half" ng-class="{selected: management.MediaPosition == 'm-northwest'}">m-northwest</label>
+        </div>
+        <hr>
+        <button id="btnLogin" type="submit" ng-click="management.$save()">Guardar</button>
+    </form>
+</div>
+<a href="/management/{{management.$id}}" target="_blank" class="previewpage">
+    Preview Page <span class="material-icons">call_made</span>
+</a>
+<!-- Switch -->
+
+<div class="onoffswitch">
+    <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+<progress id="uploader" class="off"></progress>
+    </div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div>

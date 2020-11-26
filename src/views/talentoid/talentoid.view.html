@@ -1,0 +1,183 @@
+
+
+
+   
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+
+
+<div id="wrapper">
+    <div id="talento">
+      <div class="left">
+        <img id="{{item.Order}}" ng-repeat="item in Addoniess | orderBy: 'Order'" ng-src="{{item.Src}}" data-ng-click="openSliderrr($event)"/>
+      </div>
+
+      <style>
+        .mobiletop{
+          display: none;
+        }
+        
+
+        @media only screen and (max-width: 768px) {
+          .mobiletop{
+          display: block;
+          width: 100%
+          }
+          .mobiletop img{
+            width: 100%;
+          }
+        }
+      </style>
+      <div class="mobiletop">
+        <img id="{{item.Order}}" ng-repeat="item in Addoniess | orderBy: 'Order' | limitTo : 1" ng-src="{{item.Src}}"/>
+      </div>
+
+      <div class="right">
+        <div class="data">
+          <div class="name">{{theproject.Name}}</div>
+          <div class="type">Modelo</div>
+          <div class="facts">
+            <br>
+            <div ng-if="theproject.Pronombre">Pronombre<span>{{theproject.Pronombre}}</span></div>
+            <div ng-if="theproject.Profesion">Profesion<span>{{theproject.Profesion}}</span></div>
+            <div ng-if="theproject.Altura">Altura<span>{{theproject.Altura}}</span></div>
+            <div ng-if="theproject.Busto">Busto<span>{{theproject.Busto}}</span></div>
+            <div ng-if="theproject.Cintura">Cintura<span>{{theproject.Cintura}}</span></div>
+            <div ng-if="theproject.Cadera">Cadera<span>{{theproject.Cadera}}</span></div>
+            <div ng-if="theproject.Pantalon">Pantalon<span>{{theproject.Pantalon}}</span></div>
+            <div ng-if="theproject.Zapato">Zapato<span>{{theproject.Zapato}}</span></div>
+            <div ng-if="theproject.Saco">Saco<span>{{theproject.Saco}}</span></div>
+            <div ng-if="theproject.Camisa">Camisa<span>{{theproject.Camisa}}</span></div>
+            <div ng-if="theproject.Cabello">Pelo {{theproject.Cabello}}</div>
+            <div ng-if="theproject.Ojos">Ojos {{theproject.Ojos}}</div>
+            <br>
+          </div>
+          <div class="instagram">
+            <style>
+              .icon-ig{
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                margin-right: 6px;
+                vertical-align: top;
+              }
+            </style>
+            <a href="https://instagram.com/{{theproject.Instagram}}"><img src="img/igig.svg" class="icon-ig"/><span>{{theproject.Instagram}}</span></a>
+          </div>
+        </div>
+      </div>
+
+      <style>
+        .mobilebottom{
+          display: none;
+        }
+        
+
+        @media only screen and (max-width: 768px) {
+          .mobilebottom{
+          display: block;
+          width: 100%;
+          box-sizing: border-box;
+          padding: 0px 16px;
+          }
+          .mobilebottom img{
+            width: 100%;
+            margin-bottom: 16px;
+          }
+        }
+      </style>
+      <div class="mobilebottom">
+        <img id="{{item.Order}}" ng-repeat="item in Addoniess | orderBy: 'Order' " ng-src="{{item.Src}}" ng-show="!$first"/>
+      </div>
+    </div>
+</div>
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>
+<style>
+  #slider-block{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    z-index: 9;
+    background-color: #fff;
+  }
+  #slider-block.on{
+    display: block;
+  }
+  #slider-block .holder{
+    height: auto;
+    width: 100%;
+  }
+  #slider-block .slide{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+  }
+  #slider-block .slide img{
+    height: 100%;
+    margin: 0px auto;
+    display: block;
+  }
+  #slider-block .arrow-left, #slider-block .arrow-right{
+    display:block;
+    height: 32px;
+    width: 40px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
+    cursor: pointer;
+  }
+  #slider-block .arrow-left img, #slider-block .arrow-right img{
+    width: 100%;
+  }
+  #slider-block .arrow-left{
+    left: 60px;
+  }
+  #slider-block .arrow-right{
+    right: 60px;
+  }
+  #arrow-left.off, #arrow-right.off{
+    display: none;
+  }
+  #slider-block .close{
+    display:block;
+    height: 19px;
+    width: 19px;
+    position: absolute;
+    top: 16px;
+    right: 30px;
+    cursor: pointer;
+  }
+  #slider-block .close img{
+    width: 100%;
+  }
+  #slider-block .bottom-text{
+    position: absolute;
+    left: 30px;
+    bottom: 16px;
+    display: block;
+    text-transform: uppercase;
+  }
+  #slider-block .bottom-text .name{
+    font-weight: 600;
+    margin-right: 8px;
+    display: inline-block;
+  }
+</style>
+<div id="slider-block">
+  <div id="holder" class="holder" style="margin-top: 0%;">
+    <div id="imageOnSlider{{item.Order}}" ng-repeat="item in Addoniess | orderBy: 'Order'" class="slide">
+      <img ng-src="{{item.Src}}"/>
+    </div>
+  </div>
+  <div id="arrow-left" class="arrow-left" ng-click="prevSliderrr()"><img src="img/left.svg" /></div>
+  <div id="arrow-right" class="arrow-right" ng-click="nextSliderrr()"><img src="img/right.svg" /></div>
+  <div class="close" ng-click="closeSliderrr()"><img src="img/crosscross.svg" /></div>
+  <div class="bottom-text"><span class="name">{{theproject.Name}}</span><span class="modelo">Modelo</span></div>
+</div>

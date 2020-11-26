@@ -1,0 +1,857 @@
+#login{
+    display: block;
+    width: 100%;
+    max-width: 640px;
+    margin: auto;
+    position: relative;
+}
+#login form{
+    margin-top: 40px;
+}
+#login .logo{
+    height: 20px;
+    display: block;
+    margin: auto;
+    padding-top: 40px;
+}
+#login input{
+    width: 100%;
+    padding: 18px 10px 10px 10px;
+    text-align: center;
+    border: 1px solid #fafafa;
+    background-color: #fafafa;
+    border-radius: 2px;
+}
+
+#login button{
+    font-family: 'Helvetica', sans-serif;
+    font-size: 16px;
+    display: block;
+    height: 38px;
+    line-height: 44px;
+    border: 1px solid #333;
+    background-color: #333;
+    margin: auto;
+    border-radius: 2px;
+    color: #fff;
+    font-weight: normal;
+    transition: opacity .25s ease;
+}
+#login button:hover{
+    opacity: 0.75;
+    transition: opacity .25s ease;
+}
+
+#login #btnLogin {
+    margin-top: 20px;
+}
+
+#login h1 {
+    font-family: 'Helvetica', sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#login label{
+    display: block;
+    width: 100%;
+    height: 40px;
+    line-height: 45px;
+    font-weight: normal;
+    background-color: #fafafa;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+#login .halfers label.half{
+    display: inline-block;
+    width: 48.5%;
+    height: 38px;
+    line-height: 45px;
+    font-weight: normal;
+    background-color: #fafafa;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+    border: 1px solid #fafafa;
+    transition: all .25s ease;
+}
+#login .halfers label.half.selected{
+    color: #333;
+    border: 1px solid #333;
+    transition:all .25s ease;
+}
+/* #login .halfers label.half:last-child{
+    float: right;
+} */
+#login .halfers input{
+    display: none;
+}
+#login textarea{
+    display: block;
+    width: 100%;
+    border: 1px solid #fafafa;
+    background-color: #fafafa;
+    min-height: 120px;
+    text-align: center;
+    padding: 20px;
+    padding-top: 14px;
+}
+.plusbutton{
+    display: inline-block;
+    width: 26px;
+    height: 26px;
+    background-color: #333;
+    border-radius: 13px;
+    margin: auto;
+    margin: 0px 5px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all .25s ease;
+}
+.plusbutton:hover{
+    opacity: 0.75;
+    transition: all .25s ease;
+}
+.plusbutton img{
+    display: block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+}
+.ngremove{
+    font-size: 12px;
+    color: #333;
+    cursor: pointer;
+    transition: all .25s ease;
+    opacity: 0.5
+}
+.ngremove:hover{
+    opacity: 0.25;
+    transition: all .25s ease;
+}
+span.sectit {
+    display: block;
+    width: 100%;
+    text-align: center;
+    opacity: 1;
+    padding: 10px 0px 16px;
+}
+#login .left{
+    display: block;
+    width: 49%;
+    float: left;
+    margin-right: 2%;
+}
+#login .right{
+    display: block;
+    width: 49%;
+    float: left;
+}
+.clearon:after { content: "\0020"; display: block; height: 0; clear: both; visibility: hidden; }
+
+.vyes{
+    width: 18px;
+    height: 18px;
+    opacity: 1;
+    transform: rotate(0deg);
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+    transition: all .25s ease;
+}
+.vno{
+    width: 18px;
+    height: 18px;
+    opacity: 0.25;
+    transform: rotate(-180deg);
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+    transition: all .25s ease;
+}
+.fyes{
+    width: 12px;
+    height: 12px;
+    opacity: 0.7;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+    transition: all .25s ease;
+    padding-top: 2px;
+}
+.fno{
+    width: 12px;
+    height: 12px;
+    opacity: 0.10;
+    position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin: auto;
+    transition: all .25s ease;
+    padding-top: 2px;
+}
+.dno{
+    width: 14px;
+    height: 14px;
+    opacity: 0.35;
+    /* position: absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0; */
+    margin: auto;
+    transition: all .25s ease;
+}
+
+.projects .pblock {
+    width: 100%;
+    height: inherit;
+    line-height: 1.25;
+    background-color: #fafafa;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    padding: 16px 10px 16px 20px;
+    font-size: 16px;
+    border-radius: 4px;
+    position: relative;
+    text-align: center;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.projects .d-links .pblock {
+    justify-content: center;
+}
+
+.actions {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 20%;
+}
+
+#repeater a {
+    width: 60%;
+    text-align: left;
+}
+
+.projects .pblock .viewyes{
+    display: block;
+    /* position: absolute;
+    float: right;
+    right: 0px;
+    top: 0; */
+    /* height: 40px; */
+    width: 30px;
+}
+.projects .pblock .featured{
+    display: block;
+    /* position: absolute;
+    float: right;
+    right: 30px;
+    top: 0; */
+    /* height: 40px; */
+    width: 30px;
+}
+.projects .pblock .delete{
+    display: block;
+    /* position: absolute;
+    float: right;
+    right: 60px;
+    top: 0; */
+    /* height: 40px; */
+    width: 30px;
+}
+.projects .pblock .arrows{
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    /* position: absolute;
+    float: left;
+    left: 0px;
+    top: 0; */
+    height: 40px;
+    width: 20%;
+    display: none;
+}
+
+.projects .pblock .arrows .top, .projects .pblock .arrows .down{
+    display: block;
+    float: left;
+    height: 16px;
+    width: 40px;
+    opacity: 0.5;
+    transition: all .25s ease;
+    cursor: pointer;
+}
+.projects .pblock .arrows .top img, .projects .pblock .arrows .down img{
+    position: absolute;
+    display: block;
+    float: left;
+    height: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.projects .pblock .arrows .top:hover, .projects .pblock .arrows .down:hover{
+    opacity: 1;
+    transition: all .25s ease;
+}
+.projects .pblock .arrows .top img{
+    bottom: 24px;
+}
+.projects .pblock .arrows .down{
+    margin-top: 8px;
+}
+#uploader{
+    position:fixed;
+    bottom:0;
+    width:100%;
+    left:0;
+    border-radius: 0px;
+    background-color: transparent;
+    pointer-events: none;
+    height: 4px;
+    /* Important Thing */
+	-webkit-appearance: none;
+	border: none;
+}
+#uploader.on{
+    opacity: 1;
+    transition: all .25s ease;
+}
+#uploader.off{
+    opacity: 0;
+    transition: all .25s ease;
+}
+
+
+
+
+/* All good till now. Now we'll style the background */
+#uploader::-webkit-progress-bar {
+	background: transparent;
+	border-radius: 0px;
+	box-shadow: 0px;
+}
+
+/* Now the value part */
+#uploader::-webkit-progress-value {
+	border-radius: 0px;
+	box-shadow: 0px;
+	background: #333;
+}
+
+
+.onoffswitch {
+    display: none;
+    position: fixed; width: 122px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    right:0;
+    bottom: 0;
+    margin: 30px;
+}
+.onoffswitch-checkbox {
+    display: none !important;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #FFFFFF; border-radius: 0px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 30px; padding: 0; line-height: 30px;
+    font-size: 12px; color: white; 
+    font-weight: normal;
+    box-sizing: border-box;
+    line-height: 36px;
+}
+.onoffswitch-inner:before {
+    content: "English Version";
+    padding-left: 10px;
+    background-color: #eee; color: #333;
+}
+.onoffswitch-inner:after {
+    content: "Version Español";
+    padding-right: 10px;
+    background-color: #fafafa; color: #333;
+    text-align: right;
+}
+.onoffswitch-switch {
+    display: block; width: 1px; height: 1px; margin: 14.5px;
+    background: #333;
+    position: absolute; top: 0; bottom: 0;
+    right: 89px;
+    border: 2px solid #333; border-radius: 0px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0px;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+    background: #333;
+    border: 2px solid #333; border-radius: 0px;
+}
+
+.footie{
+    display: block;
+    width: 100%;
+    text-align: center;
+    opacity: .25;
+    height: 140px;
+    line-height: 181px;
+    font-size: 12px;
+}
+
+.meniu{
+    font-family: 'Helvetica', sans-serif;
+    display: block;
+    width: 100%;
+    height: 40px;
+    max-height: 40px;
+    line-height: 48px;
+    overflow: hidden !important;
+    margin-top: 40px;
+}
+
+.meniu .centiecentie {
+    font-weight: bold;
+}
+
+.meniu div{
+    height: 40px;
+    overflow: hidden;
+    opacity: 0.5;
+    transition: all .25s ease;
+}
+
+.meniu div:hover{
+    opacity: 1;
+    transition: all .25s ease;
+}
+
+.meniu .leftleft{
+    display: block;
+    left:0;
+    position: absolute;
+    width: 20%;
+    font-size: 12px;
+}
+
+.meniu .centiecentie{
+    display: block;
+    left:0;
+    right: 0;
+    margin: auto;
+    position: absolute;
+    width: 60%;
+    text-align: center;
+    pointer-events: none;
+}
+
+.meniu .centiecentie:hover{
+    opacity: .5;
+}
+.meniu .rightright{
+    display: block;
+    right:0;
+    position: absolute;
+    width: 20%;
+    text-align: right;
+}
+
+.mimune{
+    color: #333;
+    font-size: 12px;
+    opacity: 0.5;
+    transition: all 0.25s ease;
+}
+
+.mimune:hover{
+    opacity: 1;
+        transition: all 0.25s ease;
+}
+
+.gotoproject{
+    display: block;
+    position: fixed;
+    height: 30px;
+    line-height: 36px;
+    background-color: #333;
+    bottom: 80px;
+    right: 32px;
+    z-index: 1000;
+    padding: 0 20px;
+    font-size: 12px;
+    color: #fafafa !important;
+    cursor: pointer;
+}
+
+.blockieup{
+    display: block;
+    width: 40px;
+    height: 40px;
+    float: left
+}
+
+.blockieup .top, .blockieup .down{
+    display: block;
+    height: 20px;
+    width: 40px;
+    opacity: 0.25;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.blockieup .top img, .blockieup .down img{
+    width: 14px;
+    margin-left: 13px;
+    margin-top: 8px;
+}
+
+.blockieup .down img{
+    margin-top: 0px;
+}
+
+.blockieup .top:hover, .blockieup .down:hover{
+    transition: all 0.25s ease;
+    opacity: 1;
+}
+
+.sgrid{
+    display: block;
+}
+
+/* Fer Code */
+* {
+    box-sizing: border-box;
+}
+
+.meniu {
+    display: block;
+    width: 100%;
+    height: 40px;
+    max-height: 40px;
+    line-height: 48px;
+    overflow: hidden !important;
+    margin-top: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1010;
+    background: black;
+    color: white;
+}
+
+.meniu .centiecentie {
+    display: -webkit-flex;
+    display: flex;
+    width: 60%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.meniu .rightright {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    width: auto;
+    text-align: center;
+    padding: 0;
+}
+
+.meniu .rightright a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.projects form a .pblock {
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.projects form a:hover .pblock {
+    background: black;
+    color: white;
+}
+
+.title {
+    font-family: 'Helvetica', sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#modules .module>.data>.title {
+    text-align: left;
+    text-transform: none;
+    margin-top: 8px;
+}
+
+.meniu .leftleft {
+    width: auto;
+    font-size: 16px;
+    height: 40px;
+}
+
+.meniu .leftleft a {
+    font-weight: normal;
+    text-transform: none;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0 16px;
+    font-size: 14px;
+    color: white;
+}
+
+.meniu .leftleft a span {
+    margin-right: 4px;
+    font-size: 18px;
+}
+
+#login {
+    margin: 80px auto;
+}
+
+
+#login button {
+    line-height: 36px;
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 8px;
+    color: #000;
+    padding: 0 20px;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+#login button:hover {
+    background-color: #000;
+    color: white;
+    opacity: 1;
+}
+
+.previewpage {
+    position: fixed;
+    bottom: 16px;
+    right: 16px;
+    border: solid 1px black;
+    border-radius: 80px;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 14px;
+    padding: 8px 16px;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.previewpage .material-icons {
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.previewpage:hover {
+    background-color: black;
+    color: white;
+}
+
+.visib {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+}
+
+.visib p {
+    margin: 0;
+    font-size: 12px;
+    width: auto;
+    white-space: nowrap;
+}
+
+.visib .material-icons {
+    font-size: 16px;
+    margin-right: 5px;
+}
+
+.delete {
+    opacity: 0.35;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.delete:hover {
+    opacity: 1;
+}
+
+.dno {
+    opacity: 1;
+}
+
+.projects .pblock .arrows .top, .projects .pblock .arrows .down {
+    height: 50%;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects .pblock .arrows .down {
+    margin-top: 0;
+}
+
+.bottom-add {
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    opacity: .35;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.bottom-add span {
+    font-size: 24px !important;
+}
+
+.bottom-add:hover {
+    opacity: 1;
+}
+
+span.sectit, .halfers p {
+    font-family: 'Helvetica', sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    text-transform: none;
+}
+
+#login form label, #login form input {
+    text-transform: none;
+    font-weight: normal;
+    font-family: 'Helvetica', sans-serif;
+}
+
+#login .input label, .halfers p, #login label.labl {
+    padding: 0;
+    background-color: transparent;
+    text-align: center;
+    font-size: 14px;
+    color: black;
+    cursor: auto;
+    height: auto;
+    margin: 24px 0 16px 0;
+    line-height: normal;
+}
+
+.plusbutton {
+    width: 40px;
+    height: 40px;
+    background-color: #000;
+    border-radius: 40px;
+    -webkit-transition: all .25s ease-in-out;
+    -moz-transition: all .25s ease-in-out;
+    -o-transition: all .25s ease-in-out;
+    transition: all .25s ease-in-out;
+}
+
+.plusbutton span {
+    vertical-align: middle;
+    font-size: 24px !important;
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+}
+
+.halfers p {
+    margin-bottom: 24px;
+}
+
+#login .halfers label.half {
+    color: #000;
+    border-radius: 8px;
+    height: 48px;
+
+    font-family: 'Helvetica', sans-serif !important;
+    font-weight: regular;
+    font-size: 16px;
+}
+
+#login .halfers label.half:hover, #login .halfers label.half.selected {
+    background-color: #000;
+    color: #fff;
+}
+
+.sectit .ng-scope {
+    color: black;
+    opacity: 1;
+    padding-bottom: 24px;
+    font-size: 14px;
+}
+
+#login textarea, .input input {
+    font-weight: normal;
+    font-size: 16px;
+}
+
+.error {
+    text-align: center;
+    margin: 16px auto;
+    color: red;
+}

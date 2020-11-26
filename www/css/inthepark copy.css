@@ -1,0 +1,1297 @@
+@font-face{
+    font-family: Calibre;
+    src: url(../type/Calibre-Regular.otf);
+    font-style: normal;
+    font-weight: 400;
+}
+@font-face{
+    font-family: Calibre;
+    src: url(../type/Calibre-Light.otf);
+    font-style: normal;
+    font-weight: 300;
+}
+@font-face{
+    font-family: Calibre;
+    src: url(../type/Calibre-Semibold.otf);
+    font-style: normal;
+    font-weight: 600;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+body{
+    background-color: #fff;
+    font-size: 16px;
+    font-family: Calibre;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+#logo{
+    position: fixed;
+    top: 18px;
+    left: 32px;
+    z-index: 10;
+    height: 20px;
+    width: auto;
+    mix-blend-mode: exclusion;
+}
+#logo img{
+    height: 100%;
+}
+header{
+    display: block;
+    height: 56px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    z-index: 9;
+    text-align: center;
+    background-color: #fff;
+}
+header>ul.nav{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 58px;
+}
+header>ul.nav>li{
+    display: inline;
+    padding: 0px 20px;
+    font-size: 18px;
+}
+header>ul.right{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    line-height: 58px;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+header>ul.right>li{
+    display: inline;
+    padding: 0px 20px;
+    font-size: 18px;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 10.24px;
+    line-height: 100%;
+    /* or 10px */
+
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+#wrapper{
+    padding-top: 56px;
+    min-height: calc(100vh - 56px);
+    background-color: #fff;
+    width: 100%;
+}
+#modules{
+    display: block;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0px auto;
+    padding: 0px 64px;
+    box-sizing: border-box;
+}
+#modules::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+#modules .module{
+    display: block;
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 32px;
+    float: left;
+}
+#modules>.module.m-01{
+    width: 100%;
+}
+#modules .module .media, #modules .module .media img{
+    width: 100%;
+}
+#modules .module>.data{
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 12px;
+    padding-top: 16px;
+}
+#modules .module.m-01>.data{
+    display: block;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 12px;
+    padding-top: 16px;
+}
+#modules .module.m-01.quote>.data{
+    display: block;
+    width: 75%;
+    box-sizing: border-box;
+    padding-right: 12px;
+    padding-top: 16px;
+}
+#modules .module.m-01.quote>.data>.title{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 48.83px;
+    line-height: 90%;
+    text-transform: uppercase;
+    color: #000000;
+}
+#modules .module>.data>.date{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    display: block;
+    height: 15px;
+    padding-bottom: 8px;
+}
+#modules .module>.data>.title{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-weight: 400;
+    font-size: 31.25px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.01em;
+    padding-bottom: 8px;
+}
+#modules .module>.data>.subtitle{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.01em;
+    padding-bottom: 8px;
+}
+#modules .module.m-02{
+    width: 50%;
+}
+#modules .module.m-02>.data{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 24px;
+    padding-top: 16px;
+}
+#modules>.module.m-03{
+    width: 33.33%;
+}
+#modules>.module.m-03>.data{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 12px;
+    padding-top: 16px;
+}
+#modules .module>.data>.date{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    display: block;
+    height: 15px;
+    padding-bottom: 8px;
+}
+#modules .module>.data>.title{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 25px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.005em;
+}
+#modules>.top{
+    display: block;
+}
+#modules>.top::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+#modules .module>.data.top{
+    padding-top: 0px;
+    color: #000;
+}
+#modules .module>.data.top>.date{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    display: block;
+    height: 15px;
+    padding-bottom: 8px;
+}
+#modules .module>.data.top>.date>span{
+    margin-left: 70px;
+}
+#modules .module>.data.top>.title{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 61.04px;
+    line-height: 80%;
+    /* or 49px */
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+#modules .module>.data.top>.subtitle{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 31.25px;
+    line-height: 100%;
+    letter-spacing: -0.02em;
+    color: #000000;
+    margin-top: 40px;
+}
+#modules .module>.data.top>.icons{
+    margin-top: 40px;
+}
+#modules>.module.m-03>.data>.subtitle{
+    display: none;
+}
+#modules>.module.m-03.nosotros>.data>.title{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+    padding-bottom: 0px;
+}
+#modules>.module.m-03.nosotros>.data>.subtitle{
+    display: block;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+}
+#modules>.module.m-04{
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 25%;
+}
+#modules>.module.m-04>.data{
+    width: 100%;
+    padding-right: 12px;
+}
+#modules>.module.m-04.paragraph>.data>p{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 120%;
+    /* or 24px */
+
+    letter-spacing: 0.01em;
+
+    /* Negro */
+
+    color: #000000;
+}
+#modules>.module.m-cast{
+    width: 25%;
+}
+#modules>.module.m-cast>.data{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 24px;
+    padding-top: 16px;
+}
+#modules>.module.m-cast>.data>.date{
+    display: none;
+}
+#modules>.module.m-cast>.data>.title{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+    text-align: left;
+}
+#modules>.module.m-cast>.data>.subtitle{
+    display: none;
+}
+#loadmore{
+    display: block;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 120px;
+    text-align: center;
+}
+#loadmore button{
+    padding: 16px 32px 8px;
+    background: #FFFFFF;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    outline: none;
+    letter-spacing: 0.05em;
+}
+#loadmore button:hover, #loadmore button:active{
+    background-color: #000;
+    border-color: #000;
+    color: #fff;
+}
+#related{
+    display: block;
+    width: 100%;
+    display: block;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0px auto;
+    padding: 0px 76px;
+    box-sizing: border-box;
+}
+#related::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+#related>.articles{
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+    width: 100%;
+    padding: 26px 0px;
+}
+#related>.articles::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+#related>.articles>.article{
+    display: block;
+    width: 25%;
+    float: left;
+}
+#related>.articles>.article>.box{
+    display: flex;
+    width: 100%;
+    position: relative;
+}
+#related>.articles>.article>.box>.left{
+    display: flex;
+    width: 30%;
+}
+#related>.articles>.article>.box>.left>img{
+    width: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+#related>.articles>.article>.box>.right{
+    display: flex;
+    height: auto;
+    width: 70%;
+    box-sizing: border-box;
+    padding: 0px 16px 0px 8px;
+}
+#related>.articles>.article>.box>.right>.top{
+    font-size: 16px;
+    font-weight: normal;
+    box-sizing: border-box;
+    padding-bottom: 16px;
+    width: 100%;
+    font-size: 20px
+}
+#related>.articles>.article>.box>.right>.top>span.date{
+    font-size: 12.8px;
+    display: block;;
+}
+#related>.articles>.article>.box>.right>.top>span.title{
+    margin-top: 4px;
+    font-size: 20px;
+    display: block;
+    font-size: 20px;
+    line-height: 100%;
+}
+#related>.articles>.article>.box>.right>.bottom{
+    display: table-cell;
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10.24px;
+    line-height: 100%;
+    /* or 10px */
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    /* Gray 3 */
+    color: #828282;
+}
+footer{
+    display: block;
+    width: 100%;
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 1680px;
+    margin: 0px auto;
+    padding: 36px 64px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+footer::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+footer .column {
+    display: block;
+    box-sizing: border-box;
+    padding-left: 12px;
+    padding-right: 12px;
+    float: left;
+    width: 33.33%;
+}
+footer .column p{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 110%;
+    /* or 18px */
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    /* Negro */
+    color: #000000;
+    margin: 0;
+}
+footer .column ul{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 110%;
+    letter-spacing: -0.02em;
+    /* Negro */
+    color: #000000;
+}
+footer .column ul li{
+    display: list-item;
+}
+.social-icns{
+    display: block;
+    width: 80px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    right: 12px;
+}
+.social-icns li{
+    display: block;
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    padding: 1px;
+    float: right;
+    margin-left: 20px;
+}
+.social-icns li img{
+    height: 100%;
+}
+#talento {
+    display: block;
+    width: 100%;
+    margin-bottom: 64px;
+}
+#talento::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+#talento>.left, #talento>.right{
+    display: block;
+    float: left;
+}
+#talento>.left{
+    width: 64%;
+}
+#talento>.left>img{
+    width: 100%;
+}
+#talento>.right{
+    width: 36%;
+    position: sticky;
+    top:56px;
+}
+#talento>.right>.data{
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 114px 109px 114px 109px;
+}
+#talento>.right>.data>.name{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 61.04px;
+    line-height: 80%;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+}
+#talento>.right>.data>.type{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #000000;
+    margin-top: 16px;
+}
+#talento>.right>.data>.facts{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 200%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #000000;
+}
+#talento>.right>.data>.facts>div>span{
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-left: 16px;
+}
+#talento>.right>.data>.instagram{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #000000;
+}
+.nosotros-logo{
+    text-align: center;
+    padding: 156px 0px 78px 0px;
+}
+.nosotros-logo img{
+    width: 200px !important;
+    mix-blend-mode: exclusion;
+}
+.nosotros-fixer{
+    margin-left: 16.66%;
+}
+
+#modules.unete{
+    padding-top: 40px;
+}
+#modules.unete>.module{
+    width:50%;
+}
+.unete>.module.left{
+    position: sticky;
+    top: 96px;
+}
+.unete>.module.left>.title{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 61.04px;
+    line-height: 100%;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    color: #000000;
+    margin-bottom: 30px;
+}
+.unete>.module.left>.subtitle{
+    width: 75%;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+    color: #000000;
+}
+.unete>.module.left>.formtitle{
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e0e0e0;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    /* identical to box height, or 16px */
+
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.unete>.module.left>.formtitle.noline{
+    border-top: 0px;
+}
+.unete .form .row{
+    flex-wrap: wrap;
+    width: 100%;
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+}
+.unete .form input{
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #000;
+    padding: 8px 0px;
+    display: flex;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    /* or 15px */
+
+    text-transform: uppercase;
+}
+.unete .form .row.one input{
+    width: 100%;
+}
+.unete .form .row.two input{
+    width: calc(50% - 8px);
+}
+.unete .form .row.three input{
+    width: calc(33.33% - 11px);
+}
+.unete .form .row.text span{
+    width: 75%;
+    display: flex;
+    margin: 16px 0px;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #000000;
+}
+.unete .form .row.text div{
+    width: 75%;
+    display: flex;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    text-transform: uppercase;
+    color: #000000;
+}
+.unete .form .row.text div input{
+    vertical-align: middle;
+    display: inline-block;
+}
+.unete .form .row.text div label{
+    margin-right: 16px;
+    margin-left: 4px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.unete>.module.right>.subtitle{
+    width: 75%;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 110%;
+    letter-spacing: 0.02em;
+    color: #000000;
+    margin-bottom: 32px;
+}
+.unete>.module.right>.subtitle span{
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 16px;
+}
+.unete .pics{
+    outline: none;
+    border: none;
+    padding: 8px 0px;
+    display: flex;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    gap: 16px;
+}
+.unete .pics div{
+    width: calc(50% - 8px);
+    
+}
+.unete .pics div>div>img{
+    opacity: 0.5;
+    pointer-events: none;
+    width: 100%;
+}
+.unete .pics div>div{
+    width: 100%;
+}
+.unete .pics div>span{
+    margin-top: 8px;
+    display: block;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12.8px;
+    line-height: 120%;
+    /* or 15px */
+
+    text-transform: uppercase;
+}
+.bgplace{
+    background-position: center center;
+    background-size: cover;
+}
+.pic-frente{
+    background-image: url(../img/image38.png);
+}
+.form-submit{
+    display: block;
+    width: 100%;
+    padding: 16px 0px;
+    font-family: Calibre;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: center;
+    background-color: #000;
+}
+.nav.mobile{
+    display: none;
+}
+
+
+@media only screen and (min-width: 769px) {
+    header{
+        display: block;
+    }
+    header#mobile{
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 1180px) {
+    header>ul.nav>li{
+        padding: 0px 8px;
+    }
+    #related>.articles>.article{
+        width: 33.33%;
+    }
+    #modules{
+        padding: 0px 32px;
+    }
+    #related{
+        padding: 0px 44px;
+    }
+    footer{
+        padding: 36px 32px;
+    }
+
+
+
+    #talento {
+        display: block;
+        width: 100%;
+        margin-bottom: 64px;
+    }
+    #talento::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+    #talento>.left, #talento>.right{
+        display: block;
+        float: left;
+    }
+    #talento>.left{
+        width: 60%;
+    }
+    #talento>.left>img{
+        width: 100%;
+    }
+    #talento>.right{
+        width: 40%;
+        position: sticky;
+        top:56px;
+        box-sizing: border-box;
+    }
+    #talento>.right>.data{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 114px 48px 114px 48px;
+    }
+    #talento>.right>.data>.name{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 61.04px;
+        line-height: 80%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+    #talento>.right>.data>.type{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12.8px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        margin-top: 16px;
+    }
+    #talento>.right>.data>.facts{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 200%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    #talento>.right>.data>.facts>div>span{
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-left: 16px;
+    }
+    #talento>.right>.data>.instagram{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12.8px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+    }
+
+
+
+
+}
+@media only screen and (max-width: 768px) {
+
+
+
+    #logo{
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 10;
+        height: 15px;
+        width: auto;
+        mix-blend-mode: exclusion;
+    }
+    #logo img{
+        height: 100%;
+    }
+    header{
+        display: none;
+        height: 45px;
+        width: 100%;
+        position: fixed;
+        top:0;
+        z-index: 9;
+        text-align: center;
+        background-color: #fff;
+    }
+    header#mobile{
+        display: block;
+        position: fixed;
+        width: 100%;
+        top: 0px;
+        left: 0px;
+        height: 45px;
+        background-color: #fff;
+        z-index: 5;
+    }
+    header#mobile .icons{
+        display: block;
+        height: 25px;
+        position: absolute;
+        right: 8px;
+        top:10px;
+        box-sizing: border-box;
+    }
+    header#mobile .icons{
+        display: inline-block;
+        height: 25px;
+        padding: 5px;
+        box-sizing: border-box;
+        mix-blend-mode: exclusion;
+    }
+    header#mobile .icons .icon img{
+        height: 15px;
+        pointer-events: none;
+
+    }
+    .nav.mobile{
+        display: none;
+        width: 100%;
+        background-color: #fff;
+        position: fixed;
+        top: 45px;
+        padding: 28px 24px;
+        box-sizing: border-box;
+        border-top: 1px solid #E0E0E0;
+    }
+    .nav.mobile .left, .nav.mobile .right{
+        display: inline-block;
+        width: 50%;
+        box-sizing: border-box;
+        vertical-align: top;
+    }
+    .nav.mobile .left{
+        border-right: 1px solid #E0E0E0;
+    }
+    .nav.mobile .right{
+        padding-left: 24px;
+    }
+    .nav.mobile ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .nav.mobile ul.leftie{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 28px;
+
+        letter-spacing: -0.02em;
+
+        color: #000000;
+    }
+    .nav.mobile ul.rightie{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12.8px;
+        line-height: 28px;
+
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+
+        color: #000000;
+    }
+    #wrapper{
+        padding-top: 45px;
+    }
+    #modules{
+        padding: 0px 0px;
+    }
+    #modules .module{
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 60px;
+    }
+    #modules .module.m-01{
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    #modules .module>.data{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 30px;
+        padding-top: 16px;
+    }
+    #modules .module.m-01>.data{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 16px;
+        padding-right: 30px;
+        padding-top: 16px;
+    }
+
+
+
+
+
+
+
+    #modules .module.m-02{
+        width: 100%;
+    }
+    #modules .module.m-02>.data{
+        padding-right: 24px;
+        padding-top: 16px;
+    }
+    #modules>.module.m-03{
+        width: 100%;
+    }
+    #modules>.module.m-03>.data{
+        padding-right: 24px;
+        padding-top: 16px;
+    }
+    #modules>.module.m-04{
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    
+
+    #modules>.module.m-cast{
+        width: 50%;
+    }
+    #modules .module.m-cast .data{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding-right: 24px;
+        padding-top: 8px;
+    }
+    #modules>.module.m-cast>.data>.date{
+        display: none;
+    }
+    #modules .module.m-cast .data .title{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 100%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #000000;
+        text-align: left !important;
+        margin-top: 16px;
+    }
+    #modules .module.m-cast .data .subtitle{
+        display: none;
+    }
+
+    footer{
+        padding: 36px 0px;
+        margin-bottom: 64px;
+    }
+    footer .column {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-bottom: 16px;
+        float: left;
+        width: 100%;
+    }
+    footer .column p{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 110%;
+        /* or 18px */
+        display: flex;
+        align-items: center;
+        letter-spacing: -0.02em;
+        /* Negro */
+        color: #000000;
+        margin: 0;
+    }
+    footer .column ul{
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 110%;
+        letter-spacing: -0.02em;
+        /* Negro */
+        color: #000000;
+    }
+    footer .column ul li{
+        display: list-item;
+    }
+    .social-icns{
+        display: block;
+        width: 80px;
+        height: 20px;
+        position: relative;
+        top: auto;
+        right: auto;
+        padding-top: 16px;
+    }
+    .social-icns li{
+        display: block;
+        width: 20px;
+        height: 20px;
+        box-sizing: border-box;
+        padding: 1px;
+        float: left;
+        margin-left: 0px;
+        margin-right: 20px;
+        margin-top: 16px;
+    }
+    .social-icns li img{
+        height: 100%;
+    }
+
+
+    #related>.articles>.article:nth-child(4){
+        display: none;
+    }
+
+
+
+
+    #talento {
+        display: block;
+        width: 100%;
+        margin-bottom: 64px;
+    }
+    #talento::after{
+        content: "";
+        clear: both;
+        display: table;
+    }
+    #talento>.left, #talento>.right{
+        display: block;
+        float: left;
+    }
+    #talento>.left{
+        display: none;
+    }
+    #talento>.left>img{
+        width: 100%;
+    }
+    #talento>.right{
+        width: 100%;
+        position: relative;
+        top:inherit;
+    }
+    #talento>.right>.data{
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 28px 18px 28px 18px;
+    }
+    #talento>.right>.data>.name{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 39.06px;
+        line-height: 100%;
+        letter-spacing: -0.02em;
+        text-transform: uppercase;
+    }
+    #talento>.right>.data>.type{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12.8px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+        margin-top: 16px;
+    }
+    #talento>.right>.data>.facts{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 200%;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    #talento>.right>.data>.facts>div>span{
+        font-weight: 600;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        margin-left: 16px;
+    }
+    #talento>.right>.data>.instagram{
+        font-family: Calibre;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12.8px;
+        line-height: 120%;
+        text-transform: uppercase;
+        color: #000000;
+    }
+    #slider-block{
+        display: none !important;
+    }
+
+
+
+
+
+}
+
+

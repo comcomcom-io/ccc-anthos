@@ -1,0 +1,33 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+
+
+<style>
+  .pin .media{
+    width: 25vw;
+    height: 32vw;
+  }
+</style>
+
+<div class="proyectos">
+  <div class="pin">
+    <div class="left">
+      <div class="media">
+        <img src="https://firebasestorage.googleapis.com/v0/b/ccc-anthos.appspot.com/o/management%2F1606255063620anthos-studio-casa-maako-jose-pablo-wedding-photographer-78.jpg?alt=media&token=26ab6eca-d060-4113-bc65-7ce1b6650967" />
+      </div>
+    </div>
+    <div class="right">
+      <div class="inner">
+        <div class="fixH">
+        </div><div class="cont">
+          <p class="paraph">{{studioSettings.About}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="feed">
+    <div class="item" style="width:100%">
+      <a href="#"><img src="https://firebasestorage.googleapis.com/v0/b/ccc-anthos.appspot.com/o/management%2F1606252843340anthos-studio-casa-maako-jose-pablo-wedding-photographer-49.jpg?alt=media&token=2babe411-c8af-42a2-804c-957a61fb3c1cs"></a>
+    </div>
+  </div>
+</div>
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

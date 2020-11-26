@@ -1,0 +1,32 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+
+
+<div class="proyectos">
+    <div class="pin" ng-repeat="item in casting | orderBy: '-Order'" ng-if="item.Visible == 'On' && item.PIN">
+      <div class="left">
+        <div class="media">
+            <a href="/casting/{{item.$id}}"><img src="{{item.Thumbnail}}" /></a>
+        </div>
+      </div>
+      <div class="right">
+        <div class="inner">
+          <div class="fixH">
+          </div><div class="cont">
+            <span class="type">{{item.TYPETYPE}}</span>
+            <h1 class="title"><a href="/casting/{{item.$id}}">{{item.Name}}</a></h1>
+            <p class="paraph"><a href="/casting/{{item.$id}}">{{item.Subtitle}}</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="feed">
+      <div ng-repeat="item in casting | orderBy: '-Order'" ng-if="item.Visible == 'On' && !item.PIN" class="item">
+        <a href="/casting/{{item.$id}}"><img src="{{item.Thumbnail}}"></a>
+        <span class="categoria"><a href="/casting/{{item.$id}}">{{item.TYPETYPE}}</a></span>
+        <h3 class="title" style="text-align: left;"><a href="/casting/{{item.$id}}">{{item.Name}}</a></h3>
+      </div>
+    </div>
+</div>
+
+
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

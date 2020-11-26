@@ -1,0 +1,655 @@
+@font-face {
+    font-family: Neuzeit;
+    src: url(../type/NeuzeitGrotesk.otf);
+    font-weight: normal;
+}
+@font-face {
+    font-family: Neuzeit;
+    src: url(../type/NeuzeitGroteskBold.otf);
+    font-weight: bold;
+}
+a{
+    color: inherit;
+    text-decoration: inherit;
+}
+body{
+    background-color: #fff;
+    font-family: Neuzeit;
+}
+.container{
+    display: block;
+    width: 100%;
+    height: calc(700vh + 16px);
+}
+.container::after{
+    clear: both;
+    display: table;
+    content: "";
+}
+.container-mobile{
+    display: none;
+}
+.container .leftfeed, .container .rightfeed{
+    display: block;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+.container .leftfeed{
+    border-right: 1px solid #fff;
+    left: 0;
+    position: fixed;
+    top: 0;
+}
+.container .rightfeed{
+    border-left: 1px solid #fff;
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+}
+.container .leftfeed .module, .container .rightfeed .module{
+    display: block;
+    width: 100%;
+    height: 100vh;
+    min-height: 50vw;
+    max-height: 100vw;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid #fff;
+}
+.module .inner .media{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.module .inner .caption{
+    font-family: Neuzeit;
+    display: block;
+    height: 36px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+    line-height: 36px;
+    bottom: -36px;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.module .inner .caption a{
+    color: inherit;
+    text-decoration: none;
+}
+.module .inner .media img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.module.portrait .inner{
+    display: block;
+    width: 25vw;
+    height: 37.5vw;
+    position: absolute;
+}
+.module.landscape .inner{
+    display: block;
+    width: 37.5vw;
+    height: 25vw;
+    position: absolute;
+}
+.module.square .inner{
+    display: block;
+    width: 37.5vw;
+    height: 37.5vw;
+    position: absolute;
+}
+.module.m-center .inner{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.module.m-north .inner{
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+}
+.module.m-northeast .inner{
+    top: 0;
+    right: 0;
+}
+.module.m-east .inner{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.module.m-southeast .inner{
+    right: 0;
+    bottom: 0;
+}
+.module.m-south .inner{
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.module.m-southwest .inner{
+    bottom: 0;
+    left: 0;
+}
+.module.m-west .inner{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.module.m-northwest .inner{
+    left: 0;
+    top: 0;
+}
+.module.m-southeast .inner .caption, .module.m-south .inner .caption, .module.m-southwest .inner .caption{
+    top: -36px;
+    bottom: inherit;
+}
+.module.m-full>.inner{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.module.m-full>.inner .caption{
+    display: none;
+}
+
+
+
+header{
+    display: block;
+    position: fixed;
+    height: 70px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    box-sizing: border-box;
+    padding: 0px 32px;
+}
+header>.left, header>.right{
+    display: block;
+    height: 70px;
+    width: 50%;
+    float: left;
+    line-height: 70px;
+}
+header>.right{
+    text-align: right;
+}
+header a{
+    text-decoration: inherit;
+    color: inherit;
+    text-transform: uppercase;
+    font-family: Neuzeit;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+header>.left a{
+    margin-right: 48px;
+}
+header>.right a{
+    margin-left: 48px;
+}
+header .logo{
+    display: block;
+    height: 30px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+footer{
+    box-sizing: border-box;
+    padding: 0px 16px;
+}
+footer>.left, footer>.right{
+    display: block;
+    height: 35px;
+    width: 50%;
+    float: left;
+    line-height: 35px;
+}
+footer>.right{
+    text-align: right;
+}
+footer>.right a{
+    margin-left: 48px;
+}
+footer a{
+    text-decoration: inherit;
+    color: inherit;
+    font-family: Neuzeit;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+}
+
+/* 
+@media only screen and (max-height: 50vw) {
+    .container{
+        height: calc(350vw + 16px);
+    }
+}
+@media only screen and (max-height: 200vw) {
+    .container{
+        height: calc(700vw + 16px);
+    }
+} */
+
+.proyectos{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid #fff;
+}
+.proyectos .pin{
+    display: block;
+    height: 100vh;
+    width: 100%;
+    border-bottom: 2px solid #fff;
+}
+.proyectos .pin::after{
+    content: '';
+    display: table;
+    clear: both;
+}
+.proyectos .pin>.left, .proyectos .pin>.right{
+    display: block;
+    width: 50%;
+    height: 100vh;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+.proyectos .pin>.left .media{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.proyectos .pin>.left img, .proyectos .pin>.left video{
+    width: 100%;
+    height: 100%;
+    object-position: center center;
+    object-fit: cover;
+}
+.proyectos .pin>.right .inner{
+    display: block;
+    width: 32.5vw;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    text-align: center;
+}
+.proyectos .pin>.right .inner .fixH{
+    display: inline-block;
+    height: 100%;
+    width: 1px;
+    vertical-align: middle;
+}
+.proyectos .pin>.right .inner .cont{
+    display: inline-block;
+    vertical-align: middle;
+    width: calc(100% - 2px);
+}
+.proyectos .pin>.right .inner .cont>.type{
+    margin-bottom: 32px;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+.proyectos .pin>.right .inner .cont>.title{
+    font-size: 50px;
+    margin-bottom: 32px;
+}
+.proyectos .pin>.right .inner .cont>.paraph{
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+    line-height: 120%;
+}
+.feed{
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 32px;
+}
+.feed .item{
+    flex-grow: 0;
+    width: 33%;
+    padding-bottom: 32px;
+}
+.feed .item img{
+    width: 100%;
+}
+.feed .item .categoria{
+    margin-top: 16px;
+    display: block;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 32px;
+}
+.feed .item .title{
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    padding-left: 16px;
+    padding-right: 32px;
+}
+
+
+
+
+
+
+
+.repeater{
+    display: block;
+    width: 100%;
+}
+.repeater::after{
+    clear: both;
+    display: table;
+    content: "";
+}
+.repeater-mobile{
+    display: none;
+}
+.repeater>.module{
+    display: block;
+    width: 50%;
+    float: left;
+    box-sizing: border-box;
+}
+.repeater .leftfeed{
+    border-right: 1px solid #fff;
+    left: 0;
+    position: fixed;
+    top: 0;
+}
+.repeater .rightfeed{
+    border-left: 1px solid #fff;
+    position: fixed;
+    right: 0;
+    bottom: 0px;
+}
+.repeater>.module, .repeater>.module{
+    display: block;
+    width: 50%;
+    height: 100vh;
+    min-height: 50vw;
+    max-height: 100vw;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid #fff;
+}
+.repeater>.module.hundred{
+    width: 100%;
+}
+.repeater>.module .inner .media{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.repeater>.module .inner .caption{
+    font-family: Neuzeit;
+    display: block;
+    height: 36px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    font-size: 12px;
+    line-height: 36px;
+    bottom: -36px;
+    box-sizing: border-box;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.repeater>.module .inner .caption a{
+    color: inherit;
+    text-decoration: none;
+}
+.repeater>.module .inner .media img{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+.repeater>.module.portrait .inner{
+    display: block;
+    width: 25vw;
+    height: 37.5vw;
+    position: absolute;
+}
+.repeater>.module.landscape .inner{
+    display: block;
+    width: 37.5vw;
+    height: 25vw;
+    position: absolute;
+}
+.repeater>.module.square .inner{
+    display: block;
+    width: 37.5vw;
+    height: 37.5vw;
+    position: absolute;
+}
+.repeater>.module.m-center .inner{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+.repeater>.module.m-north .inner{
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+}
+.repeater>.module.m-northeast .inner{
+    top: 0;
+    right: 0;
+}
+.repeater>.module.m-east .inner{
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+.repeater>.module.m-southeast .inner{
+    right: 0;
+    bottom: 0;
+}
+.repeater>.module.m-south .inner{
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.repeater>.module.m-southwest .inner{
+    bottom: 0;
+    left: 0;
+}
+.repeater>.module.m-west .inner{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+}
+.repeater>.module.m-northwest .inner{
+    left: 0;
+    top: 0;
+}
+.repeater>.module.m-southeast .inner .caption, .repeater>.module.m-south .inner .caption, .repeater>.module.m-southwest .inner .caption{
+    top: -36px;
+    bottom: inherit;
+}
+.repeater>.module.m-full>.inner{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.repeater>.module.m-full>.inner .caption{
+    display: none;
+}
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .container{
+        display: none;
+    }
+    .container-mobile{
+        display: block;
+    }
+    .container-mobile .module, .container-mobile .module{
+        display: block;
+        width: 100%;
+        height: 100vh;
+        min-height: 50vw;
+        max-height: 100vw;
+        overflow: hidden;
+        position: relative;
+        border-bottom: 2px solid #fff;
+    }
+    .module .inner .media{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .module .inner .caption{
+        font-family: Neuzeit;
+        display: block;
+        height: 36px;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        font-size: 12px;
+        line-height: 36px;
+        bottom: -36px;
+        box-sizing: border-box;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 12px;
+        text-transform: uppercase;
+    }
+    .module .inner .caption a{
+        color: inherit;
+        text-decoration: none;
+    }
+    .module .inner .media img{
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center center;
+    }
+    .module.portrait .inner{
+        display: block;
+        width: 50vw;
+        height: 75vw;
+        position: absolute;
+    }
+    .module.landscape .inner{
+        display: block;
+        width: 75vw;
+        height: 50vw;
+        position: absolute;
+    }
+    .module.square .inner{
+        display: block;
+        width: 75vw;
+        height: 75vw;
+        position: absolute;
+    }
+    .module.m-center .inner{
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .module.m-north .inner{
+        left: 0;
+        top: 0;
+        right: 0;
+        margin: auto;
+    }
+    .module.m-northeast .inner{
+        top: 0;
+        right: 0;
+    }
+    .module.m-east .inner{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+    .module.m-southeast .inner{
+        right: 0;
+        bottom: 0;
+    }
+    .module.m-south .inner{
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+    .module.m-southwest .inner{
+        bottom: 0;
+        left: 0;
+    }
+    .module.m-west .inner{
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+    }
+    .module.m-northwest .inner{
+        left: 0;
+        top: 0;
+    }
+    .module.m-southeast .inner .caption, .module.m-south .inner .caption, .module.m-southwest .inner .caption{
+        top: -36px;
+        bottom: inherit;
+    }
+    .module.m-full>.inner{
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    .module.m-full>.inner .caption{
+        display: none;
+    }
+
+    header>.left, header>.right{
+        display: none;
+    }
+}

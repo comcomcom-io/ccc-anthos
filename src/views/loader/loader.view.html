@@ -1,0 +1,43 @@
+<div ng-if="realog === 'yes'">
+<style>
+    body{
+        padding: 0px 10px;
+        margin-bottom: 0px;
+    }
+</style>
+<div id="login">
+    <a href="/dashboard" class="title">Loader</a>
+    <div class="meniu">
+        <div class="leftleft">
+            <a href="/dashboard">
+                <span class="material-icons">keyboard_backspace</span> Back
+            </a>
+        </div>
+        <div class="centiecentie"><a href="/dashboard" class="title">IN THE PARK ADMIN</a></div>
+        <div class="rightright"></div>
+    </div>
+    
+    <form>
+        <video id="thumbie" src="{{LoaderioLoaderio.video}}" style="width:100%;" autoplay muted loop></video>
+        <input type="file" id="thumb" placeholder="hola" style="display:none"  custom-on-change="uThumbnail">
+        <label for="thumb">Upload video (webm format, no audio)</label>
+
+        <img id="headie" src="{{LoaderioLoaderio.fallback}}" style="width:100%;"/>
+        <input type="file" id="header" placeholder="hola" style="display:none"  custom-on-change="uHeader">
+        <label for="header">Upload fallback image (Minimum 1920x1080)</label>
+    </form>
+</div>
+<!-- Switch -->
+<!-- <a href="/loader/{{loader.$id}}" target="_blank" class="gotoloader">
+    View loader
+</a> -->
+<div class="onoffswitch">
+    <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+    <label class="onoffswitch-label" for="myonoffswitch">
+        <span class="onoffswitch-inner"></span>
+        <span class="onoffswitch-switch"></span>
+    </label>
+</div>
+<progress id="uploader" class="off"></progress>
+    </div>
+    <div ng-if="realog != 'yes'" ng-init="tologin()"></div>

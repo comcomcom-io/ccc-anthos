@@ -1,0 +1,24 @@
+<ng-include ng-controller="headerController" src="'header/header.view.html'"></ng-include>
+<div id="wrapper">
+    <div id="modules">
+
+      <style>
+        .titulito{
+          padding-top: 48px;
+          padding-bottom: 0px;
+        }
+      </style>
+      <div class="module m-04 paragraph">
+        <div class="media nosotros-logo titulito" style="font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;text-align: left;">
+          Términos y Condiciones
+        </div>
+        <div class="data">
+          <p>{{studioSettings.Terminos}}</p>
+        </div>
+      </div>
+      
+    </div>
+</div>
+<ng-include ng-controller="footerController" src="'footer/footer.view.html'"></ng-include>

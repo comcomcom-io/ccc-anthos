@@ -1,0 +1,98 @@
+<div ng-if="realog === 'yes'">
+    <link rel="stylesheet" href="css/portfolio.css">
+    <style>
+        body {
+            padding: 0px 10px;
+            margin-bottom: 0px;
+        }
+    </style>
+    <div id="login">
+        <a href="/dashboard " class="title">Create Home Item</a>
+        <div class="meniu">
+            <div class="leftleft">
+                <a href="/cccmanagement">
+                    <span class="material-icons">keyboard_backspace</span> Back
+                </a>
+            </div>
+            <div class="centiecentie">Anthos Admin</div>
+            <div class="rightright">&nbsp;</div>
+        </div>
+
+        <form>
+            <img id="thumbie" src="media/PlaceholderImage.jpg" style="width:100%; display:none">
+            <input type="file" id="thumb" placeholder="Thumbnail" style="display:none" custom-on-change="uThumbnail">
+            <label for="thumb">Thumbnail</label>
+
+            <div class="input">
+                <label>Title</label>
+                <input type="text" placeholder="This is the title" spellcheck="false" ng-model="pro.Title" ng-trim="false">
+            </div>
+
+            <div class="input">
+                <label>Name</label>
+                <input type="text" placeholder="Identify this item" spellcheck="false" ng-model="pro.Url" ng-trim="false" ng-change="pro.Url = pro.Url.split(\' \').join(\'\')">
+            </div>
+
+            <div class="input">
+                <label>URL (If Any)</label>
+                <input type="text" placeholder="Place URL if any" spellcheck="false" ng-model="pro.LINK">
+            </div>
+
+            <hr>
+
+            <div class="halfers">
+                <p>Select the size of the thumbnail inside the category.</p>
+                <input type="radio" ng-model="pro.MediaType" value="fit" id="promtfull" name="horvsver" checked>
+                <input type="radio" ng-model="pro.MediaType" value="portrait" id="promtcenter" name="horvsver">
+                <input type="radio" ng-model="pro.MediaType" value="landscape" id="promthalf" name="horvsver">
+                <input type="radio" ng-model="pro.MediaType" value="square" id="promtthird" name="horvsver">
+                <label for="promtfull" class="half" ng-class="{selected: pro.MediaType == 'fit'}">Full</label>
+                <label for="promtcenter" class="half" ng-class="{selected: pro.MediaType == 'portrait'}">Portrait</label>
+                <label for="promthalf" class="half" ng-class="{selected: pro.MediaType == 'landscape'}">landscape</label>
+                <label for="promtthird" class="half" ng-class="{selected: pro.MediaType == 'square'}">Square</label>
+            </div>
+
+            <hr>
+
+            <div class="halfers">
+                <p>Select Position.</p>
+                <input type="radio" ng-model="pro.MediaPosition" value="m-full" id="m-full" name="horvsver" checked>
+                <input type="radio" ng-model="pro.MediaPosition" value="m-center" id="m-center" name="horvsver" checked>
+                <input type="radio" ng-model="pro.MediaPosition" value="m-north" id="m-north" name="horvsver">
+                <input type="radio" ng-model="pro.MediaPosition" value="m-northeast" id="m-northeast" name="horvsver">
+                <input type="radio" ng-model="pro.MediaPosition" value="m-east" id="m-east" name="horvsver">
+
+                <input type="radio" ng-model="pro.MediaPosition" value="m-southeast" id="m-southeast" name="horvsver">
+                <input type="radio" ng-model="pro.MediaPosition" value="m-south" id="m-south" name="horvsver">
+                <input type="radio" ng-model="pro.MediaPosition" value="m-southwest" id="m-southwest" name="horvsver">
+                <input type="radio" ng-model="pro.MediaPosition" value="m-west" id="m-west" name="horvsver">
+                <input type="radio" ng-model="pro.MediaPosition" value="m-northwest" id="m-northwest" name="horvsver">
+
+                <label for="m-full" class="half" ng-class="{selected: pro.MediaPosition == 'm-full'}">full</label>
+                <label for="m-center" class="half" ng-class="{selected: pro.MediaPosition == 'm-center'}">Center</label>
+                <label for="m-north" class="half" ng-class="{selected: pro.MediaPosition == 'm-north'}">north</label>
+                <label for="m-northeast" class="half" ng-class="{selected: pro.MediaPosition == 'm-northeast'}">northeast</label>
+                <label for="m-east" class="half" ng-class="{selected: pro.MediaPosition == 'm-east'}">m-east</label>
+
+                <label for="m-southeast" class="half" ng-class="{selected: pro.MediaPosition == 'm-southeast'}">m-southeast</label>
+                <label for="m-south" class="half" ng-class="{selected: pro.MediaPosition == 'm-south'}">m-south</label>
+                <label for="m-southwest" class="half" ng-class="{selected: pro.MediaPosition == 'm-southwest'}">m-southwest</label>
+                <label for="m-west" class="half" ng-class="{selected: pro.MediaPosition == 'm-west'}">m-west</label>
+                <label for="m-northwest" class="half" ng-class="{selected: pro.MediaPosition == 'm-northwest'}">m-northwest</label>
+            </div>
+
+            <hr>
+            <button id="btnLogin" type="submit" ng-disabled="waitSave != 0" ng-click="newP()">{{buttonMgs}}</button>
+            <div ng-if="errorMsg" class="error">{{errorMsg}}</div>
+        </form>
+    </div>
+    <progress id="uploader" class="off"></progress>
+    <div class="onoffswitch">
+        <input ng-model="lang" ng-true-value="'eng'" ng-false-value="'esp'" type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" checked>
+        <label class="onoffswitch-label" for="myonoffswitch">
+            <span class="onoffswitch-inner"></span>
+            <span class="onoffswitch-switch"></span>
+        </label>
+    </div>
+</div>
+<div ng-if="realog != 'yes'" ng-init="tologin()"></div>

@@ -1,0 +1,112 @@
+<style> 
+    #blockie{
+        display: block;
+        width: 100vw;
+        height: 100vh;
+        max-height: 100vh;
+        position: fixed;
+        z-index: 9900000;
+        overflow: hidden;
+        left: 0;
+        top: 0;
+        background-position: center center;
+    }
+    #blockie.hidie{
+        animation:fadeh 0s;
+        animation-timing-function:linear;
+        animation-delay: .75s;
+        animation-fill-mode:forwards;
+        animation-iteration-count: 1;
+        -webkit-animation-iteration-count: 1;
+        -webkit-animation:fadeh 0s;
+        -webkit-animation-timing-function:linear;
+        -webkit-animation-delay: .75s;
+        -webkit-animation-fill-mode: forwards;
+    }
+    #blockie .modernloader{
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: #fff;
+        overflow: hidden;
+        opacity: 1;
+        transition: background-color .25s ease;
+    }
+    #blockie .modernloader{
+        background-size: cover;
+        background-position: center center;
+    }
+    #blockie .modernloader.true {
+        opacity: 1;
+        animation:fadeout .25s;
+        animation-timing-function:linear;
+        animation-delay: .5s;
+        animation-fill-mode:forwards;
+        animation-iteration-count: 1;
+        -webkit-animation:fadeout .25s linear .5s 1 forwards none;
+    }
+    .modernloader.values{
+        background-color: #fafafa;
+        content: {{Dsettings.loadedie}};
+    }
+    .slippery{
+        background-position: center center;
+        background-size: cover;
+        animation: slip 3.5s step-start 0s infinite normal none;
+    }
+    #nswitch{
+        display: block;
+        width: 100%;
+        height: 0px;
+        background-color: #fff;
+        position: fixed;
+        overflow: hidden;
+        z-index: 5000000;
+        left: 0;
+        opacity: 0;
+        transition: all 1s ease;
+    }
+    #nswitch.siporfavor{
+        height: 100%;
+        opacity: 1;
+        transition: all 1s ease;
+    }
+    #nswitch img{
+        display: block;
+        width: 182px;
+        height: auto;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+        transition: opacity 1s ease;
+    }
+    #nswitch img.siporfavor{
+        opacity: 1;
+        transition: opacity 1s ease;
+    }
+</style>
+
+
+
+<div id="nswitch" class="{{nswitch.$value}}">
+</div>
+<div id="blockie" class="{{Dsettings.loadedie}}" ng-init="hola()">
+    <div id="modiediedie" class="modernloader slippery {{Dsettings.loaded}}" style="background-color:#fff">
+    </div>
+</div>
+<header>
+    <div class="left">
+      <a href="/casting"><span>Proyectos</span></a>
+      <a href="/nosotros"><span>El Estudio</span></a>
+    </div>
+    <a href="index.html"><img class="logo" src="img/Logo.svg"/></a>
+    <div class="right">
+      <a href="mailto:hola@anthos.studio"><span>Email</span></a>
+      <a href="https://www.instagram.com/anthos.studio" target="blank_"><span>Instagram</span></a>
+    </div>
+  </header>
